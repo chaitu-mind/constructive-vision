@@ -8,7 +8,7 @@ import "./globals.css";
 
 /* Self-hosted at build time: no third-party request, no render-blocking
    stylesheet, no layout shift. All three matter for Core Web Vitals. */
-const display = Manrope({ subsets: ["latin"], weight: ["600", "700", "800"], variable: "--font-display", display: "swap" });
+const display = Manrope({ subsets: ["latin"], weight: ["300", "400", "600", "700", "800"], variable: "--font-display", display: "swap" });
 const body = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-body", display: "swap" });
 
 export const metadata: Metadata = {

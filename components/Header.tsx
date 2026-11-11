@@ -9,14 +9,13 @@ import { site, telLink } from "@/lib/site";
 export function Logo() {
   return (
     <span className="logo">
-      <svg viewBox="0 0 48 48" aria-hidden="true">
-        <rect width="48" height="48" rx="8" fill="var(--dark)" />
-        <path d="M22.8 17.1A9 9 0 1 0 22.8 30.9" fill="none" stroke="#fff" strokeWidth="4.5" />
-        <path d="M26 15 33 33 40 15" fill="none" stroke="var(--accent-soft)" strokeWidth="4.5" strokeLinejoin="miter" />
+      <svg viewBox="0 0 96 96" fill="none" aria-hidden="true">
+        <polyline points="12,50 26,64 54,22 82,50 82,78" stroke="currentColor"
+          strokeWidth="11" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
       <span className="logo__txt">
-        <b>Constructive Visions</b>
-        <i>Builders &amp; Engineers</i>
+        <b>Constructive</b>
+        <i>Vision</i>
       </span>
     </span>
   );
