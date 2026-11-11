@@ -862,3 +862,6 @@ a.topbar__item:hover{ color:#fff; }
   .hero__callbody li span{ min-width:78px; font-size:var(--fs-xs); }
   .hero__callbody li a{ font-size:1.15rem; }
 }
+
+@media (max-width:700px){ .topbar__second{ display:none; } }
+@media (max-width:1180px){ .topbar__hide{ display:none; } .topbar__push{ margin-left:auto; } }
