@@ -69,7 +69,7 @@ export function Cta({ title, body, image = "tower-cranes" }: { title: string; bo
         <div className="ctaband__side">
           <div className="ctaband__calls">
             <span className="ctaband__label">Call us directly</span>
-            {founders.slice(0, 2).map((f) => (
+            {founders.map((f) => (
               <a key={f.name} className="ctaband__phone" href={telLink(f.phone)}>
                 <small>{f.name.split(" ")[0]}</small>
                 {f.phone}
