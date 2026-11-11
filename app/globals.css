@@ -868,3 +868,9 @@ a.topbar__item:hover{ color:#fff; }
 .foot__people{ gap:10px !important; }
 .foot__people li{ max-width:none !important; }
 .foot__people a{ font-family:var(--display); font-size:1.15rem; font-weight:700; text-decoration:none; }
+
+/* Estimator — itemised inclusions */
+.incl{ display:grid; gap:22px; margin-top:14px; }
+@media (min-width:760px){ .incl{ grid-template-columns:repeat(2,1fr); } }
+.incl__g h4{ font-family:var(--display); font-size:1rem; margin:0 0 8px; }
+.incl__g .ticks{ font-size:var(--fs-sm); }

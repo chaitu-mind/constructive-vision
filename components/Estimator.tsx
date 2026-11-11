@@ -97,6 +97,24 @@ export default function Estimator() {
         </div>
 
         <div className="est__panel">
+          <h3>What is included in {pkg.name}</h3>
+          <p className="est__note">
+            Everything below is in the rate shown. Structure is identical in all three
+            specifications; they differ in finishes and joinery.
+          </p>
+          <div className="incl">
+            {pkg.inclusions.map((g) => (
+              <div key={g.group} className="incl__g">
+                <h4>{g.group}</h4>
+                <ul className="ticks ticks--plain">
+                  {g.items.map((i) => <li key={i}>{i}</li>)}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="est__panel">
           <h3>Where the money goes</h3>
           <p className="est__note">
             Percentages of construction cost, against the midpoint of the range above.
