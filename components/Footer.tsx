@@ -35,7 +35,6 @@ export default function Footer() {
 
           <div className="foot__contact">
             <h3>Contact</h3>
-            <a href={telLink()} className="foot__phone">{site.phone}</a>
             <a href={`mailto:${site.email}`}>{site.email}</a>
             <a href={waLink(`Hello ${site.name}, I would like an estimate.`)} target="_blank" rel="noopener">WhatsApp us</a>
             <ul className="foot__people">
