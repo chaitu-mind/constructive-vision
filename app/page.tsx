@@ -46,12 +46,22 @@ export default function Home() {
             <Link className="btn btn--lg" href="/contact/">Get a free estimate</Link>
             <Link className="btn btn--lg btn--outline-light" href="/estimate/">Calculate your build cost</Link>
           </div>
-          <a className="hero__call" href={telLink()}>
+          <div className="hero__call">
             <span className="hero__callicon" aria-hidden="true">
               <svg viewBox="0 0 16 16"><path d="M4.2 1.6 6 4.9 4.7 6.4a8.6 8.6 0 0 0 4.9 4.9L11.1 10l3.3 1.8-.6 2.5c-.2.6-.7 1-1.4 1A12 12 0 0 1 .7 3.6c0-.7.4-1.2 1-1.4l2.5-.6Z" fill="currentColor" /></svg>
             </span>
-            <span><small>Talk to a founder</small>{site.phone}</span>
-          </a>
+            <div className="hero__callbody">
+              <small>Talk to a founder</small>
+              <ul>
+                {founders.map((f) => (
+                  <li key={f.name}>
+                    <span>{f.name.split(" ")[0]}</span>
+                    <a href={telLink(f.phone)}>{f.phone}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
