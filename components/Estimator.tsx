@@ -14,7 +14,9 @@ const inr = (n: number) =>
 const lakh = (n: number) => (n / 100000).toFixed(n < 1000000 ? 1 : 0);
 
 export default function Estimator() {
-  const [plot, setPlot] = useState(1800);
+  const [plotText, setPlotText] = useState("1800");
+  // Let the field hold any text while typing; use a sane floor for the maths.
+  const plot = Math.max(450, Number(plotText) || 0);
   const [floors, setFloors] = useState(2);
   const [pkgId, setPkgId] = useState<"essential" | "standard" | "premium">("standard");
   const [manual, setManual] = useState<number | "">("");
@@ -36,8 +38,9 @@ export default function Estimator() {
       <form className="est__form" onSubmit={(e) => e.preventDefault()}>
         <div className="field">
           <label htmlFor="e-plot">Plot area, in square feet</label>
-          <input id="e-plot" type="number" min={450} max={36000} step={50} value={plot}
-            onChange={(e) => setPlot(Math.max(450, Number(e.target.value) || 0))} />
+          <input id="e-plot" type="number" min={450} max={36000} step={50} value={plotText}
+            onChange={(e) => setPlotText(e.target.value)}
+            onBlur={() => setPlotText(String(plot))} />
           <span className="field__note mono">
             {inr(plot / 9)} sq.yd · typical coverage after setbacks {Math.round(derived.coverage * 100)}%
           </span>
@@ -91,6 +94,24 @@ export default function Estimator() {
             <div><dt>Rate applied</dt><dd className="mono">₹{inr(pkg.low)}–{inr(pkg.high)}/sq.ft</dd></div>
             <div><dt>Likely programme</dt><dd className="mono">{derived.months} months</dd></div>
           </dl>
+        </div>
+
+        <div className="est__panel">
+          <h3>What is included in {pkg.name}</h3>
+          <p className="est__note">
+            Everything below is in the rate shown. Structure is identical in all three
+            specifications; they differ in finishes and joinery.
+          </p>
+          <div className="incl">
+            {pkg.inclusions.map((g) => (
+              <div key={g.group} className="incl__g">
+                <h4>{g.group}</h4>
+                <ul className="ticks ticks--plain">
+                  {g.items.map((i) => <li key={i}>{i}</li>)}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="est__panel">
