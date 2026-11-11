@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { banners } from "@/lib/images";
 import PageHeader from "@/components/PageHeader";
 
 export default function NotFound() {
   return (
     <>
-      <PageHeader bubble="?" eyebrow="Not found" title="No sheet at this reference"
+      <PageHeader image={banners.notFound} eyebrow="Not found" title="Page not found"
         trail={[{ name: "Home", path: "/" }, { name: "Not found", path: "/404/" }]}
         lede="That page does not exist. It may have been renamed, or the link may be mistyped." />
       <section className="sheet">

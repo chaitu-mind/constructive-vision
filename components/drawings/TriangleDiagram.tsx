@@ -10,7 +10,7 @@ export default function TriangleDiagram() {
   ];
   return (
     <svg className="dwg" viewBox="0 0 560 530" role="img"
-      aria-label="Triangle diagram with each of the three founders at one vertex: client and design, site and execution, cost and schedule.">
+      aria-label="Triangle diagram with each of the three founders at one vertex: cost and schedule, site and execution, client and design.">
       <title>The three founders, one at each vertex</title>
       <polygon className="red" points={v.map((p) => p.join(",")).join(" ")} />
       <line className="ln ln--hair" x1={62} y1={372} x2={389} y2={240} />

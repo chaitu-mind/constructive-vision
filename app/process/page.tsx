@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { banners } from "@/lib/images";
 import PageHeader, { SectionHead, Cta } from "@/components/PageHeader";
 import { method, spec } from "@/lib/content";
 import { site } from "@/lib/site";
@@ -28,7 +29,7 @@ export default function Process() {
     <>
       <JsonLd data={breadcrumbJsonLd(trail)} />
       <JsonLd data={howTo} />
-      <PageHeader bubble="E" eyebrow="Process" title="Six stages, in order" trail={trail}
+      <PageHeader image={banners.process} eyebrow="Process" title="Six stages, in order" trail={trail}
         lede="Nothing on this list can be skipped or resequenced. Each stage ends in a document you keep, which is what makes the next stage checkable." />
 
       <section className="sheet">
@@ -48,7 +49,7 @@ export default function Process() {
 
       <section className="sheet sheet--sunk" id="specification">
         <div className="wrap">
-          <SectionHead bubble="F" eyebrow="Specification" title="Published, not negotiated on site"
+          <SectionHead eyebrow="Specification" title="Published, not negotiated on site"
             lede="The grade of every material we build with, in writing, before you sign. If another quote is cheaper, this table is where the difference will be." />
           <div className="spec">
             <table>
@@ -66,11 +67,7 @@ export default function Process() {
         </div>
       </section>
 
-      <section className="sheet">
-        <div className="wrap">
-          <Cta title="Compare this against any other quote" body="Take this table to whoever else has quoted you and ask them to fill in the same rows. That comparison is worth more than a headline rate." />
-        </div>
-      </section>
+      <Cta title="Compare this against any other quote" body="Take this table to whoever else has quoted you and ask them to fill in the same rows. That comparison is worth more than a headline rate." />
     </>
   );
 }

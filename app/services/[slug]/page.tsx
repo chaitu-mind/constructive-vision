@@ -5,6 +5,7 @@ import PageHeader, { SectionHead } from "@/components/PageHeader";
 import { capabilities } from "@/lib/content";
 import { site } from "@/lib/site";
 import { works } from "@/lib/works";
+import { img, serviceImage } from "@/lib/images";
 import { breadcrumbJsonLd, JsonLd } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -62,17 +63,19 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     <>
       <JsonLd data={breadcrumbJsonLd(trail)} />
       <JsonLd data={serviceLd} />
-      <PageHeader bubble={c.ref} eyebrow="Service" title={c.title} trail={trail} lede={c.intro} />
+      <PageHeader image={serviceImage(c.slug)} eyebrow="Our services" title={c.title} trail={trail} lede={c.intro} />
 
       <section className="sheet">
         <div className="wrap">
           <div className="twocol">
             <div>
-              <SectionHead bubble="1" eyebrow="Scope" title="What the engagement includes" as="h2" />
-              <ul className="ticks">{c.includes.map((x) => <li key={x}>{x}</li>)}</ul>
-
-              <div style={{ marginTop: 40 }}>
-                <SectionHead bubble="2" eyebrow="Deliverables" title="What you are handed" as="h2" />
+              <figure className="svcfig"><img src={img(serviceImage(c.slug))} alt="" /></figure>
+              <div className="block">
+                <h2>What the engagement includes</h2>
+                <ul className="ticks">{c.includes.map((x) => <li key={x}>{x}</li>)}</ul>
+              </div>
+              <div className="block">
+                <h2>What you are handed</h2>
                 <ul className="ticks">{c.deliverables.map((x) => <li key={x}>{x}</li>)}</ul>
               </div>
             </div>
@@ -88,7 +91,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                   {c.tags.map((t) => <li key={t}>{t}</li>)}
                 </ul>
               </div>
-              <div className="panel">
+              <div className="panel panel--dark">
                 <h3>Next step</h3>
                 <p>Send the plot details and any drawings you already have. The first site visit and the outline estimate cost nothing.</p>
                 <div className="cta__btns" style={{ marginTop: 4 }}>
@@ -100,14 +103,14 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
           {related.length > 0 && (
             <div style={{ marginTop: 56 }}>
-              <SectionHead bubble="3" eyebrow="Related work" title="Projects under this service" as="h2" />
+              <SectionHead eyebrow="Related work" title="Projects under this service" as="h2" />
               <div className="caps">
                 {related.map((w) => (
                   <Link className="cardlink" key={w.slug} href={`/works/${w.slug}/`}>
                     <div className="cap__ref">{w.ref} · {w.year}</div>
                     <h3>{w.name}</h3>
                     <p>{w.location} · {w.area} · {w.config}</p>
-                    <span className="more">Open the sheet →</span>
+                    <span className="more">View project →</span>
                   </Link>
                 ))}
               </div>

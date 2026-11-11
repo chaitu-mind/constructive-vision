@@ -1,159 +1,195 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import SettingOut from "@/components/drawings/SettingOut";
-import Elevation from "@/components/drawings/Elevation";
 import { SectionHead, Cta } from "@/components/PageHeader";
-import { site, founders } from "@/lib/site";
-import { capabilities, assurance } from "@/lib/content";
+import ServiceCard from "@/components/ServiceCard";
+import WorkCard from "@/components/WorkCard";
+import { site, founders, telLink } from "@/lib/site";
+import { capabilities, assurance, method } from "@/lib/content";
 import { works } from "@/lib/works";
+import { img, heroSlides } from "@/lib/images";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+const pillars = [
+  { k: "IS 456:2000", v: "Structural design to code" },
+  { k: "Stage-wise", v: "Pay only for finished work" },
+  { k: "Weekly", v: "Dated site photo reports" },
+  { k: "12 months", v: "Defect liability after handover" },
+];
+
 export default function Home() {
-  const featured = works.slice(0, 3);
+  const featured = works.slice(0, 6);
 
   return (
     <>
-      {/* A — the firm */}
-      <section className="sheet hero">
-        <div className="wrap">
-          <div className="hero__grid">
-            <div>
-              <div className="dim"><span className="dim__txt">Sheet A · The firm</span><span className="dim__line" /></div>
-              <p className="eyebrow" style={{ marginTop: 22 }}>
-                Civil engineering &amp; construction · {site.region}
-              </p>
-              <h1 className="hero__name">TRI<span>KONA</span></h1>
-              <p className="hero__lede">
-                <b>Trikona</b> is the Sanskrit word for triangle — the only polygon that
-                cannot deform, and the shape every truss on every site is built from.
-              </p>
-              <p className="hero__note">
-                Three brothers, three founders. One vertex each: the client and the design,
-                the site and its execution, the cost and the schedule. Take any one away and
-                the frame racks.
-              </p>
-              <div className="hero__cta">
-                <Link className="btn" href="/contact/">Get an estimate</Link>
-                <Link className="btn btn--ghost" href="/works/">See the works</Link>
-              </div>
+      {/* Hero */}
+      <section className="hero">
+        <div className="hero__slides" aria-hidden="true">
+          {heroSlides.map((s, i) => (
+            <img key={s} src={img(s)} alt="" fetchPriority={i === 0 ? "high" : "low"}
+              loading={i === 0 ? "eager" : "lazy"} style={{ animationDelay: `${i * 6}s` }} />
+          ))}
+        </div>
+        <div className="wrap hero__in">
+          <p className="eyebrow eyebrow--light">Civil engineering &amp; construction<span className="hide-sm"> · {site.region}</span></p>
+          <h1 className="hero__title">
+            Homes and buildings, <span>engineered to last.</span>
+          </h1>
+          <p className="hero__lede">
+            Turnkey houses, apartments, commercial buildings and interiors across {site.region}.
+            Engineered to code, built to a published specification, and billed only
+            against work you can see finished on site.
+          </p>
+          <div className="hero__cta">
+            <Link className="btn btn--lg" href="/contact/">Get a free estimate</Link>
+            <Link className="btn btn--lg btn--outline-light" href="/estimate/">Calculate your build cost</Link>
+          </div>
+          <a className="hero__call" href={telLink()}>
+            <span className="hero__callicon" aria-hidden="true">
+              <svg viewBox="0 0 16 16"><path d="M4.2 1.6 6 4.9 4.7 6.4a8.6 8.6 0 0 0 4.9 4.9L11.1 10l3.3 1.8-.6 2.5c-.2.6-.7 1-1.4 1A12 12 0 0 1 .7 3.6c0-.7.4-1.2 1-1.4l2.5-.6Z" fill="currentColor" /></svg>
+            </span>
+            <span><small>Talk to a founder</small>{site.phone}</span>
+          </a>
+        </div>
+      </section>
+
+      {/* Pillars strip */}
+      <section className="pillars" aria-label="Our commitments">
+        <div className="wrap pillars__in">
+          {pillars.map((p) => (
+            <div className="pillar" key={p.k}>
+              <b>{p.k}</b>
+              <span>{p.v}</span>
             </div>
-
-            <figure className="hero__fig">
-              <SettingOut />
-              <figcaption>
-                <span>Setting-out plan · Grid A–D / 1–3</span>
-                <span>Scale 1:100 · Dims in mm</span>
-              </figcaption>
-            </figure>
-          </div>
-
-          <dl className="tblock">
-            <div><dt>Practice</dt><dd>{site.legal}</dd></div>
-            <div><dt>Founded</dt><dd>{site.founded}</dd></div>
-            <div><dt>Base</dt><dd>{site.city}, {site.state}</dd></div>
-            <div><dt>Works to</dt><dd>IS 456:2000</dd></div>
-          </dl>
+          ))}
         </div>
       </section>
 
-      {/* C — capabilities */}
-      <section className="sheet sheet--sunk">
-        <div className="wrap">
-          <SectionHead bubble="C" eyebrow="Capabilities" title="What we take on"
-            lede="From a single compound wall to a turnkey apartment block. Where the job is better served by supervision than by a contract, we will say so." />
-          <div className="caps">
-            {capabilities.map((c) => (
-              <Link className="cap cardlink" key={c.slug} href={`/services/${c.slug}/`}>
-                <div className="cap__ref">{c.ref}</div>
-                <h3>{c.title}</h3>
-                <p>{c.short}</p>
-                <span className="more">Read more →</span>
-              </Link>
-            ))}
+      {/* About */}
+      <section className="sec">
+        <div className="wrap split">
+          <div className="split__media">
+            <img className="split__main" src={img("worker-hardhat", "md")} alt="Site engineer in a hard hat checking an electrical installation" loading="lazy" />
+            <img className="split__inset" src={img("blueprints", "md")} alt="Construction drawings being marked up" loading="lazy" />
+            <div className="split__badge">
+              <b>{site.founded}</b>
+              <span>Founded in {site.city}</span>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* D — works */}
-      <section className="sheet">
-        <div className="wrap">
-          <SectionHead bubble="D" eyebrow="Works" title="The record"
-            lede="Each project is filed with its configuration, built-up area and structure." />
-          <div className="works">
-            {featured.map((w) => (
-              <article key={w.slug}>
-                <Link className="work" href={`/works/${w.slug}/`} style={{ display: "grid" }}>
-                  <span className="work__plate">
-                    {w.photo ? <img src={w.photo} alt={`${w.name}, ${w.location}`} /> : <Elevation work={w} />}
-                    {w.sample && <span className="work__stamp mono">PLACEHOLDER</span>}
-                  </span>
-                  <span className="work__body">
-                    <span className="work__ref"><span>{w.ref}</span><span>{w.category}</span></span>
-                    <h3 style={{ fontSize: "1.06rem" }}>{w.name}</h3>
-                    <span className="work__loc">{w.location}</span>
-                    <span className="work__data"><span>{w.area}</span><span>{w.config}</span><span>{w.year}</span></span>
-                    <span className={`status ${w.status === "Ongoing" ? "status--ongoing" : "status--done"}`}>{w.status}</span>
-                  </span>
-                </Link>
-              </article>
-            ))}
-          </div>
-          <div className="hero__cta" style={{ marginTop: 26 }}>
-            <Link className="btn btn--ghost" href="/works/">All {works.length} projects</Link>
+          <div className="split__body">
+            <SectionHead eyebrow={`About ${site.name}`} title="Three founders. One vision. Every build accountable." />
+            <p className="lead">
+              <b>{site.name}</b> exists to turn what you picture for your plot into a
+              structure engineered to last, and to let you check every step of the way.
+            </p>
+            <p>
+              We are three brothers, and each of us owns one side of your project: the
+              design and your agreement, the site and its execution, the cost and the
+              schedule. Three people accountable for three things means nothing falls
+              between the cracks, and the build stays on drawing, on budget and on time.
+            </p>
+            <ul className="checks">
+              {founders.map((f) => (
+                <li key={f.name}><b>{f.name}</b> — {f.vertex}</li>
+              ))}
+            </ul>
+            <div className="cta__btns">
+              <Link className="btn" href="/about/">More about us</Link>
+              <Link className="btn btn--ghost" href="/process/">How we build</Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* B — founders */}
-      <section className="sheet sheet--sunk">
+      {/* Services */}
+      <section className="sec sec--grey">
         <div className="wrap">
-          <SectionHead bubble="B" eyebrow="Founders" title="Three vertices"
-            lede="Three founders, equal partners. What differs is the function each one owns and signs for." />
-          <div className="plist">
-            {founders.map((f) => (
-              <article className="pcard" key={f.name}>
-                <div className="pcard__top">
-                  <span className="pcard__no mono">{f.no}</span>
-                  <h3>{f.name}</h3>
-                </div>
-                <div className="pcard__role">{f.role}</div>
-                <p>{f.bio}</p>
-              </article>
-            ))}
+          <div className="sec__head">
+            <SectionHead eyebrow="What we do" title="Construction services under one roof"
+              lede="From a compound wall to a turnkey apartment block. Where supervision serves you better than a contract, we will say so." />
+            <Link className="btn btn--ghost" href="/services/">All {capabilities.length} services</Link>
           </div>
-          <div className="hero__cta" style={{ marginTop: 26 }}>
-            <Link className="btn btn--ghost" href="/about/">More about the practice</Link>
+          <div className="svcs">
+            {capabilities.slice(0, 6).map((c) => <ServiceCard key={c.slug} c={c} />)}
           </div>
         </div>
       </section>
 
-      {/* G — assurance */}
-      <section className="sheet">
-        <div className="wrap">
-          <SectionHead bubble="G" eyebrow="Assurance" title="How we hold ourselves to it"
-            lede="We are new. These are the commitments that let you check us against an established firm on the things that matter." />
-          <div className="assure">
-            {assurance.map((a) => (
-              <div className="ass" key={a.title}>
-                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M2 8.6 6 12.5 14 3.5" stroke="currentColor" strokeWidth="1.9" />
-                </svg>
-                <div><h3>{a.title}</h3><p>{a.desc}</p></div>
+      {/* Why us */}
+      <section className="why">
+        <img className="why__bg" src={img("rebar-overhead")} alt="" loading="lazy" />
+        <div className="wrap why__in">
+          <SectionHead light eyebrow="Why choose us" title="What we commit to in writing"
+            lede="We are a new practice, so we give you the means to check us against any established firm on the things that matter." />
+          <div className="why__grid">
+            {assurance.map((a, i) => (
+              <div className="why__item" key={a.title}>
+                <span className="why__no">{String(i + 1).padStart(2, "0")}</span>
+                <h3>{a.title}</h3>
+                <p>{a.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="sheet sheet--sunk">
+      {/* Process */}
+      <section className="sec">
         <div className="wrap">
-          <Cta title="Start with a site visit"
-            body="The first visit and the outline estimate cost nothing. Tell us where the plot is and what you want built." />
+          <SectionHead center eyebrow="Our process" title="From empty plot to handing you the keys"
+            lede="Six stages, always in this order. Each one ends with a document you keep." />
+          <ol className="flow">
+            {method.map((m) => (
+              <li key={m.no}>
+                <span className="flow__no">{m.no}</span>
+                <h3>{m.title}</h3>
+                <p>{m.out}</p>
+              </li>
+            ))}
+          </ol>
+          <div className="center"><Link className="btn btn--ghost" href="/process/">See every stage in detail</Link></div>
         </div>
       </section>
+
+      {/* Projects */}
+      <section className="sec sec--grey">
+        <div className="wrap">
+          <div className="sec__head">
+            <SectionHead eyebrow="Our projects" title="Recent works"
+              lede="Each project is filed with its configuration, built-up area and structure." />
+            <Link className="btn btn--ghost" href="/works/">View all projects</Link>
+          </div>
+          <div className="works">
+            {featured.map((w) => <WorkCard key={w.slug} w={w} />)}
+          </div>
+        </div>
+      </section>
+
+      {/* Founders */}
+      <section className="sec">
+        <div className="wrap">
+          <SectionHead center eyebrow="Leadership" title="Meet the founders"
+            lede="No sales team. You speak directly to whichever of us owns the part of the job you are asking about." />
+          <div className="team">
+            {founders.map((f) => (
+              <article className="member" key={f.name}>
+                <span className="member__avatar" aria-hidden="true">
+                  {f.name.split(" ").map((p) => p[0]).join("")}
+                </span>
+                <h3>{f.name}</h3>
+                <p className="member__role">{f.role}</p>
+                <p>{f.bio}</p>
+                <a className="member__phone" href={telLink(f.phone)}>{f.phone}</a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Cta title="Planning to build? Start with a free site visit."
+        body="Tell us where the plot is and what you want built. The first visit and the outline estimate cost nothing." />
     </>
   );
 }

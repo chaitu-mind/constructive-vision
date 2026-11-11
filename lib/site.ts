@@ -1,44 +1,48 @@
 /* ============================================================
-   Trikona Infra — firm identity.
+   Constructive Visions — firm identity.
    EDIT THIS FILE FIRST. Every value marked TODO is a placeholder.
    ============================================================ */
 
 export const site = {
-  name: "Trikona Infra",
-  legal: "Trikona Infra LLP",
-  short: "Trikona",
+  name: "Constructive Visions",
+  legal: "Constructive Visions LLP", // TODO confirm the registered entity type
+  short: "Constructive Visions",
   tagline: "Civil engineering & construction",
 
   /** Used for canonical URLs, sitemap and structured data. */
-  url: "https://trikonainfra.com",
+  url: "https://constructivevisions.com", // TODO confirm the domain you register
 
   founded: "2026",
 
-  /* TODO replace all five */
-  phone: "+91 90000 00000",
-  whatsapp: "919000000000", // digits only, country code first
-  email: "hello@trikonainfra.com",
-  street: "Plot 00, Road No. 0, Jubilee Hills",
+  /* Main line: Chaithanya (client & design). TODO replace the address and GST. */
+  phone: "+91 93813 74502",
+  whatsapp: "919381374502", // digits only, country code first
+  email: "hello@constructivevisions.com",
+  street: "Door No. 0-00, Main Road",
   gst: "GSTIN — to be issued",
 
-  city: "Hyderabad",
-  state: "Telangana",
-  postal: "500033",
+  city: "Tirupati",
+  state: "Andhra Pradesh",
+  postal: "517501",
   country: "IN",
 
   /* Approximate co-ordinates of the office. Google uses these for local
      search, so replace them with the real ones from Google Maps. */
-  geo: { lat: 17.4239, lng: 78.4738 },
+  geo: { lat: 13.6288, lng: 79.4192 },
 
-  region: "Telangana & Andhra Pradesh",
+  region: "Andhra Pradesh & Karnataka",
   areaServed: [
-    "Hyderabad",
-    "Secunderabad",
-    "Ranga Reddy district",
-    "Medchal–Malkajgiri",
     "Tirupati",
+    "Chittoor",
+    "Nellore",
+    "Kadapa",
+    "Anantapur",
     "Kurnool",
     "Vijayawada",
+    "Bengaluru",
+    "Bengaluru Rural",
+    "Kolar",
+    "Mysuru",
   ],
 
   hours: "Mo-Sa 09:00-19:00",
@@ -51,27 +55,30 @@ export const founders = [
   {
     no: "01",
     name: "Janardhan Reddy",
+    phone: "+91 99897 35889",
     role: "Founder — Planning & Estimation",
     vertex: "Cost & schedule",
     bio: "Prepares the bill of quantities, rate analysis and programme. Tracks stage-wise billing against work actually completed, so the cost never drifts quietly.",
   },
   {
     no: "02",
-    name: "Chaithanya Reddy",
-    role: "Founder — Client & Design",
-    vertex: "Client & design",
-    bio: "Runs client relationships, design coordination and commercial terms. Every drawing set and every agreement is signed off here before work starts on site.",
-  },
-  {
-    no: "03",
     name: "Tejeswar Reddy",
+    phone: "+91 93929 97712",
     role: "Founder — Projects & Execution",
     vertex: "Site & execution",
     bio: "Owns the site. Labour, materials, sequencing and quality checks at every stage from excavation through handover, with a weekly photo record for the client.",
+  },
+  {
+    no: "03",
+    name: "Chaithanya Reddy",
+    phone: "+91 93813 74502",
+    role: "Founder — Client & Design",
+    vertex: "Client & design",
+    bio: "Runs client relationships, design coordination and commercial terms. Every drawing set and every agreement is signed off here before work starts on site.",
   },
 ] as const;
 
 export const waLink = (text?: string) =>
   `https://wa.me/${site.whatsapp}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
 
-export const telLink = () => `tel:${site.phone.replace(/[^+\d]/g, "")}`;
+export const telLink = (phone: string = site.phone) => `tel:${phone.replace(/[^+\d]/g, "")}`;

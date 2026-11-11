@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Source_Serif_4, JetBrains_Mono } from "next/font/google";
+import { Inter, Manrope } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { site } from "@/lib/site";
@@ -8,9 +8,8 @@ import "./globals.css";
 
 /* Self-hosted at build time: no third-party request, no render-blocking
    stylesheet, no layout shift. All three matter for Core Web Vitals. */
-const display = Archivo({ subsets: ["latin"], weight: ["500", "600", "700", "800"], variable: "--font-display", display: "swap" });
-const body = Source_Serif_4({ subsets: ["latin"], weight: ["400", "600"], variable: "--font-body", display: "swap" });
-const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-mono", display: "swap" });
+const display = Manrope({ subsets: ["latin"], weight: ["600", "700", "800"], variable: "--font-display", display: "swap" });
+const body = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-body", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -24,10 +23,11 @@ export const metadata: Metadata = {
   authors: [{ name: site.legal }],
   generator: "Next.js",
   keywords: [
-    "civil contractor Hyderabad", "construction company Hyderabad",
+    "civil contractor Tirupati", "construction company Tirupati",
     "turnkey house construction", "RCC structural design",
-    "building contractor Telangana", "house construction cost per sq ft",
-    "interior fit-out contractor", "structural consultant Hyderabad",
+    "building contractor Andhra Pradesh", "construction company Bengaluru",
+    "house construction cost per sq ft",
+    "interior fit-out contractor", "structural consultant Tirupati",
   ],
   category: "construction",
   alternates: { canonical: "/" },
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     description: `Turnkey construction, structural design and interiors across ${site.region}.`,
     images: [{
       url: "/og.png", width: 1200, height: 630,
-      alt: `${site.name} — the only polygon that cannot deform`,
+      alt: `${site.name} — civil engineering & construction across ${site.region}`,
       type: "image/png",
     }],
   },
@@ -63,22 +63,18 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#E9EBE4" },
-    { media: "(prefers-color-scheme: dark)", color: "#0D141A" },
-  ],
+  themeColor: "#0E2135",
   width: "device-width",
   initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-IN" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+    <html lang="en-IN" className={`${display.variable} ${body.variable}`}>
       <body>
         <JsonLd data={businessJsonLd()} />
         <JsonLd data={websiteJsonLd()} />
         <a className="skip" href="#main">Skip to content</a>
-        <div className="rail" aria-hidden="true"><span>{site.name} · Rev {site.revision}</span></div>
         <Header />
         <main id="main">{children}</main>
         <Footer />

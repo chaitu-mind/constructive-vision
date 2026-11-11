@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { banners } from "@/lib/images";
 import PageHeader, { SectionHead, Cta } from "@/components/PageHeader";
 import TriangleDiagram from "@/components/drawings/TriangleDiagram";
-import { site, founders } from "@/lib/site";
+import { site, founders, telLink } from "@/lib/site";
 import { assurance } from "@/lib/content";
 import { breadcrumbJsonLd, JsonLd } from "@/lib/seo";
 
@@ -17,15 +18,15 @@ export default function About() {
   return (
     <>
       <JsonLd data={breadcrumbJsonLd(trail)} />
-      <PageHeader bubble="B" eyebrow="About" title="Three vertices" trail={trail}
-        lede="Trikona is the Sanskrit word for triangle. A triangle is the only polygon whose shape is fixed by its side lengths alone, which is why every truss on every site is built from them. It is also three brothers, and three functions that hold a building job together." />
+      <PageHeader image={banners.about} eyebrow="About" title="Three founders, one vision" trail={trail}
+        lede={`${site.name} is a civil engineering and construction practice run by three brothers. Every owner arrives with a vision of what they want built; our work is to turn it into drawings, a fixed price and a structure engineered to last, with one of us accountable for each part of the job.`} />
 
       <section className="sheet">
         <div className="wrap">
           <div className="partners">
             <figure className="partners__fig">
               <TriangleDiagram />
-              <p>Remove any one vertex and the frame racks. The same is true of a construction job missing its design, its site management or its cost control.</p>
+              <p>Each founder owns one side of every job and signs for it. A construction job missing its design control, its site management or its cost control is the job that goes wrong.</p>
             </figure>
             <div className="plist">
               {founders.map((f) => (
@@ -36,6 +37,7 @@ export default function About() {
                   </div>
                   <div className="pcard__role">{f.role}</div>
                   <p>{f.bio}</p>
+                  <a className="pcard__phone" href={telLink(f.phone)}>{f.phone}</a>
                 </article>
               ))}
             </div>
@@ -45,7 +47,7 @@ export default function About() {
 
       <section className="sheet sheet--sunk">
         <div className="wrap">
-          <SectionHead bubble="B.2" eyebrow="Why we started" title="A new practice, not a new trade" />
+          <SectionHead eyebrow="Why we started" title="A new practice, not a new trade" />
           <div className="twocol">
             <div className="prose">
               <p>Most complaints about building a house in India are not about skill. They are about information. The owner cannot tell what grade of steel went in, cannot tell whether the bill matches the work, and finds out about a change only when it appears on an invoice.</p>
@@ -70,7 +72,7 @@ export default function About() {
 
       <section className="sheet">
         <div className="wrap">
-          <SectionHead bubble="G" eyebrow="Assurance" title="What we commit to in writing" />
+          <SectionHead eyebrow="Assurance" title="What we commit to in writing" />
           <div className="assure">
             {assurance.map((a) => (
               <div className="ass" key={a.title}>
@@ -84,11 +86,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="sheet sheet--sunk">
-        <div className="wrap">
-          <Cta title="Talk to one of us directly" body="There is no sales team. You will speak to whichever of the three of us owns the part of the job you are asking about." />
-        </div>
-      </section>
+      <Cta title="Talk to one of us directly" body="There is no sales team. You will speak to whichever of the three of us owns the part of the job you are asking about." />
     </>
   );
 }
