@@ -24,7 +24,7 @@ export function businessJsonLd() {
     legalName: site.legal,
     url: abs("/"),
     description: `${site.name} is a civil engineering and construction practice in ${site.city}, building turnkey residential, commercial and interior projects across ${site.region}.`,
-    slogan: "The strongest shape in engineering is a triangle.",
+    slogan: "Your vision, engineered to last.",
     foundingDate: site.founded,
     telephone: site.phone,
     email: site.email,
@@ -35,7 +35,7 @@ export function businessJsonLd() {
     currenciesAccepted: "INR",
     knowsLanguage: ["en", "te", "hi"],
     areaServed: site.areaServed.map((n) => ({ "@type": "City", name: n })),
-    founder: founders.map((f) => ({ "@type": "Person", name: f.name, jobTitle: f.role })),
+    founder: founders.map((f) => ({ "@type": "Person", name: f.name, jobTitle: f.role, telephone: f.phone })),
     employee: founders.map((f) => ({ "@type": "Person", name: f.name, jobTitle: f.role })),
     hasOfferCatalog: {
       "@type": "OfferCatalog",

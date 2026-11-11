@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { banners } from "@/lib/images";
 import PageHeader, { Cta } from "@/components/PageHeader";
 import WorksGrid from "@/components/WorksGrid";
 import Elevation from "@/components/drawings/Elevation";
@@ -33,22 +34,18 @@ export default function Works() {
     <>
       <JsonLd data={breadcrumbJsonLd(trail)} />
       <JsonLd data={listLd} />
-      <PageHeader bubble="D" eyebrow="Works" title="The record" trail={trail}
-        lede="Every project is filed with its configuration, built-up area and structure. Where no photograph exists yet, the elevation is drawn from the project's own numbers." />
+      <PageHeader image={banners.works} eyebrow="Our projects" title="Projects & works" trail={trail}
+        lede="Every project is filed with its configuration, built-up area and structure. Completed and ongoing work across Andhra Pradesh and Karnataka." />
       <section className="sheet">
         <div className="wrap">
           <WorksGrid works={works} plates={plates} />
           <div className="notice">
             <b>Note</b>
-            <span>Entries stamped <strong>PLACEHOLDER</strong> are samples showing how a finished project reads here. They are excluded from the site&rsquo;s structured data, so they are never presented to a search engine as completed work.</span>
+            <span>Entries marked <strong>Sample</strong> are illustrations showing how a finished project reads here. They are excluded from the site&rsquo;s structured data, so they are never presented to a search engine as completed work.</span>
           </div>
         </div>
       </section>
-      <section className="sheet sheet--sunk">
-        <div className="wrap">
-          <Cta title="Your project could be the next sheet" body="Send the plot details and what you want built. The first visit and the outline estimate cost nothing." />
-        </div>
-      </section>
+      <Cta title="Your project could be next" body="Send the plot details and what you want built. The first visit and the outline estimate cost nothing." />
     </>
   );
 }

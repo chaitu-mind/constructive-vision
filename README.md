@@ -1,4 +1,4 @@
-# Trikona Infra — website
+# Constructive Visions — website
 
 A 22-page Next.js site that exports to plain static HTML. No server, no database,
 nothing that can go down. It deploys free on Cloudflare Pages, Netlify or GitHub
@@ -21,11 +21,11 @@ replaced before you show this to anyone.
 |------------|----------------------------|-------------------------------------|
 | `phone`    | `+91 90000 00000`          | the real number                     |
 | `whatsapp` | `919000000000`             | same number, digits only, 91 first  |
-| `email`    | `hello@trikonainfra.com`   | the real address                    |
+| `email`    | `hello@constructivevisions.com` | the real address               |
 | `street`   | `Plot 00, Road No. 0…`     | the real office address             |
 | `gst`      | `GSTIN — to be issued`     | the GSTIN once registered           |
 | `geo`      | approximate co-ordinates   | the exact ones from Google Maps     |
-| `url`      | `https://trikonainfra.com` | your domain, once bought            |
+| `url`      | `https://constructivevisions.com` | your domain, once bought     |
 
 `geo` and `url` matter more than they look. Google uses the co-ordinates for
 local ranking, and `url` is what every canonical tag and sitemap entry is built
@@ -51,7 +51,7 @@ You never need to touch a component to change content.
 ### The rates file needs your attention before anything else
 
 `lib/rates.ts` is the only file on this site that states a number a client can
-hold you to. The three package rates in it are indicative Hyderabad bands, not
+hold you to. The three package rates in it are indicative Andhra Pradesh bands (Bengaluru runs higher), not
 your rates. Replace them.
 
 The cost split across the ten stages reflects how a residential RCC build
@@ -71,7 +71,7 @@ keep it lowercase with hyphens.
   ref: "W07",
   sample: false,                     // false removes the red PLACEHOLDER stamp
   name: "Banjara Hills residence",
-  location: "Banjara Hills, Hyderabad",
+  location: "Tiruchanoor, Tirupati",
   locality: "Banjara Hills",         // used in the page title and schema
   category: "Residential",
   type: "villa",                     // villa | apartment | retail | interior | site
@@ -138,10 +138,10 @@ Technical SEO is finished. Local ranking now depends on things off the site:
    will outrank any amount of keyword tuning.
 3. **Reviews** on the Business Profile, asked for at handover.
 4. **Google Search Console** at `search.google.com/search-console`. Submit
-   `https://trikonainfra.com/sitemap.xml` the day you go live.
+   `https://<your-domain>/sitemap.xml` the day you go live.
 
 A worthwhile next step, once you have real work in an area: a page per locality,
-for example `/construction-in-kondapur/`. Do not build those until you have a
+for example `/construction-in-whitefield/`. Do not build those until you have a
 real project to put on each one, or they are thin pages and will be ignored.
 
 ---
@@ -159,14 +159,17 @@ set the build command to `npm run build` and the output directory to `out`.
 **Netlify** works identically, and `app.netlify.com/drop` will take a drag and
 drop of the `out` folder if you want it live in ten seconds.
 
-**The domain.** `trikonainfra.com` was unregistered when this was built.
+**The domain.** `constructivevisions.com` already resolved to someone else's
+server when this was renamed, so it is probably taken. `constructivevisions.in`
+had no DNS record. Check availability and set `url` in `lib/site.ts` to whatever
+you actually buy.
 Cloudflare Registrar sells `.com` at cost, around $9.77 a year, with no first
 year discount and no renewal markup. GoDaddy advertises a cheap first year and
 then renews at roughly ₹2,500. Over five years Cloudflare is less than half.
 Buy it before you print anything.
 
 **Email.** Do not put a Gmail address on a company site. Once the domain is
-yours, Zoho Mail gives you `name@trikonainfra.com` free for a few users.
+yours, Zoho Mail gives you `name@<your-domain>` free for a few users.
 
 ---
 
@@ -179,29 +182,24 @@ host, cannot break, and puts enquiries where you will actually see them.
 **The drawings are generated, not drawn.** Each project's elevation is computed
 from its own `floors` and `bays` and rendered as SVG on the server. Change
 `floors` from 2 to 4 and the building grows two storeys with the level tags
-recalculated. Nothing is a stock image.
+recalculated. They are only used for a project with no `photo`.
 
-**Light and dark.** The site follows the visitor's device. The sun icon cycles
-system, light, dark. Light reads as a drawing on paper, dark as a blueprint.
+**Photographs.** Every background and card photo lives in `public/images` and is
+mapped in `lib/images.ts`. They are licensed stock (Unsplash licence) until you
+replace them with your own site photographs, using the same file names.
 
-**Section letters A–H** are drawing grid references, listed in the footer title
-block. It is how a real drawing sheet indexes itself.
+**Colours.** Navy, concrete grey and one brick-red accent, all set as tokens at
+the top of `app/globals.css`.
 
 ---
 
 ## 6. On the name
 
-`trikonainfra.com` was unregistered and did not resolve when this was built, and
-no civil contractor trades as Trikona. Several unrelated Indian companies do use
-the word: Trikona Technologies (Hyderabad, IT), Trikona Energy (Bengaluru),
-Trikona Pharmaceuticals (Hyderabad), Trikona CONSkill Consulting (construction
-training), and Trikona Capital, a real-estate fund that wound down after 2010.
-
-None of them blocks you, but do two checks before printing anything:
+Before printing anything with **Constructive Visions** on it, run three checks:
 
 - **Trademark, class 37** (building construction), free at
   `ipindiaonline.gov.in/tmrsearch/tmrsearchmain.htm`
-- **Company name**, via the RUN service on `mca.gov.in`
-
-If either comes back contested, `dridhainfra.com` is available and unused.
-*Dridha* means firm or rigid, which carries the same structural idea.
+- **Company / LLP name**, via the RUN service on `mca.gov.in`. `legal` in
+  `lib/site.ts` currently says "Constructive Visions LLP"; correct it if the
+  entity is registered differently.
+- **Domain**, see section 4.

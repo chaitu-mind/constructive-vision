@@ -2,7 +2,8 @@
    Cost model for the estimator.
 
    ⚠ REPLACE EVERY RATE BELOW WITH YOUR OWN BEFORE PUBLISHING.
-   These are indicative Hyderabad bands and you will be held to
+   These are indicative Andhra Pradesh bands (Bengaluru typically runs
+   10–15% higher) and you will be held to
    whatever this page prints. The structure is what matters; the
    numbers are yours to set.
    ============================================================ */

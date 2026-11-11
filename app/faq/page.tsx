@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { banners } from "@/lib/images";
 import PageHeader, { Cta } from "@/components/PageHeader";
 import { faqs } from "@/lib/content";
 import { breadcrumbJsonLd, faqJsonLd, JsonLd } from "@/lib/seo";
@@ -16,7 +17,7 @@ export default function Faq() {
     <>
       <JsonLd data={breadcrumbJsonLd(trail)} />
       <JsonLd data={faqJsonLd()} />
-      <PageHeader bubble="G.2" eyebrow="Questions" title="Questions owners ask" trail={trail}
+      <PageHeader image={banners.faq} eyebrow="Questions" title="Questions owners ask" trail={trail}
         lede="Straight answers, including where the honest answer is that it depends. The first two are the questions we are asked before anything else." />
       <section className="sheet">
         <div className="wrap">
@@ -30,11 +31,7 @@ export default function Faq() {
           </div>
         </div>
       </section>
-      <section className="sheet sheet--sunk">
-        <div className="wrap">
-          <Cta title="Still need an answer?" body="Ask on WhatsApp. You will get a reply from one of the three founders, not a call centre." />
-        </div>
-      </section>
+      <Cta title="Still need an answer?" body="Ask on WhatsApp. You will get a reply from one of the three founders, not a call centre." />
     </>
   );
 }

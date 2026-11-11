@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { banners } from "@/lib/images";
 import PageHeader, { SectionHead } from "@/components/PageHeader";
 import EnquiryForm from "@/components/EnquiryForm";
-import { site, waLink, telLink } from "@/lib/site";
+import { site, founders, waLink, telLink } from "@/lib/site";
 import { breadcrumbJsonLd, JsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -25,25 +26,27 @@ export default function Contact() {
     <>
       <JsonLd data={breadcrumbJsonLd(trail)} />
       <JsonLd data={contactLd} />
-      <PageHeader bubble="H" eyebrow="Enquiry" title="Start with a site visit" trail={trail}
+      <PageHeader image={banners.contact} eyebrow="Enquiry" title="Start with a site visit" trail={trail}
         lede="The first visit and the outline estimate cost nothing. Tell us where the plot is and what you want built, and one of the three of us will call you back." />
 
-      <section className="sheet">
+      <section className="sheet sheet--sunk">
         <div className="wrap">
           <div className="enq">
-            <div>
-              <SectionHead bubble="1" eyebrow="Enquiry form" title="Send the details" as="h2" />
+            <div className="enq__form">
+              <SectionHead eyebrow="Enquiry form" title="Send us your project details" as="h2" />
               <EnquiryForm />
             </div>
 
             <div className="side">
-              <SectionHead bubble="2" eyebrow="Direct" title="Or reach us straight away" as="h2" />
+              <SectionHead eyebrow="Direct" title="Or reach us straight away" as="h2" />
               <div className="reach">
-                <a href={telLink()}>
-                  <span className="k">Call</span>
-                  <span className="v">{site.phone}</span>
-                  <span className="s">Monday to Saturday, 9:00 to 19:00</span>
-                </a>
+                {founders.map((f) => (
+                  <a key={f.name} href={telLink(f.phone)}>
+                    <span className="k">{f.name} · {f.vertex}</span>
+                    <span className="v">{f.phone}</span>
+                    <span className="s">{f.role.replace("Founder — ", "")}</span>
+                  </a>
+                ))}
                 <a href={waLink(`Hello ${site.name}, I would like an estimate.`)} target="_blank" rel="noopener">
                   <span className="k">WhatsApp</span>
                   <span className="v">{site.phone}</span>
@@ -57,7 +60,7 @@ export default function Contact() {
                 <div>
                   <span className="k">Office</span>
                   <span className="v">{site.city}</span>
-                  <span className="s">{site.street}, {site.city} {site.postal}</span>
+                  <span className="s">{site.street}, {site.city} {site.postal} · Monday to Saturday, 9:00 to 19:00</span>
                 </div>
                 <div>
                   <span className="k">Works across</span>

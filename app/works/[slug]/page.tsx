@@ -56,7 +56,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
     <>
       <JsonLd data={breadcrumbJsonLd(trail)} />
       <JsonLd data={workJsonLd(w)} />
-      <PageHeader bubble={w.ref} eyebrow={`${w.category} · ${w.locality}`} title={w.name} trail={trail} lede={w.note} />
+      <PageHeader image={w.photo ? w.photo.replace("/images/", "").replace("-md.webp", "") : undefined} eyebrow={`${w.category} · ${w.locality}`} title={w.name} trail={trail} lede={w.note} />
 
       <section className="sheet">
         <div className="wrap">
@@ -71,10 +71,10 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
             <div>
               <figure className="wplate">
                 {w.photo
-                  ? <img src={w.photo} alt={`${w.name}, ${w.location}`} />
+                  ? <img src={w.photo.replace("-md.webp", ".webp")} alt={`${w.name}, ${w.location}`} />
                   : <Elevation work={w} />}
                 <figcaption>
-                  {w.photo ? <>{w.name} · {w.location}</> : <>Front elevation generated from the project record · {w.config} · Dims in mm</>}
+                  {w.sample ? <>Illustrative photograph · sample entry</> : w.photo ? <>{w.name} · {w.location}</> : <>Front elevation generated from the project record · {w.config}</>}
                 </figcaption>
               </figure>
 
@@ -86,7 +86,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
 
             <div className="side">
               <div>
-                <SectionHead bubble="i" eyebrow="Project record" title="Filed as" as="h2" />
+                <SectionHead eyebrow="Project record" title="Project details" as="h2" />
                 <dl className="wfacts">
                   {facts.map(([k, v]) => (
                     <div key={k}><dt>{k}</dt><dd>{v}</dd></div>

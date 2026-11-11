@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { banners } from "@/lib/images";
 import PageHeader from "@/components/PageHeader";
 import Estimator from "@/components/Estimator";
 import { site } from "@/lib/site";
@@ -54,7 +55,7 @@ export default function Estimate() {
       <JsonLd data={breadcrumbJsonLd(trail)} />
       <JsonLd data={ld} />
       <JsonLd data={priceLd} />
-      <PageHeader bubble="C.0" eyebrow="Cost" title={`What will it cost to build?`} trail={trail}
+      <PageHeader image={banners.estimate} eyebrow="Cost" title={`What will it cost to build?`} trail={trail}
         lede="Most builders will not answer this until you are sitting in their office. Here is the arithmetic we use, with our rates in it, so you can do the sum yourself before you call anyone." />
       <section className="sheet">
         <div className="wrap">
