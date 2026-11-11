@@ -203,7 +203,7 @@ export const paymentSchedule: { at: string; pct: number }[] = [
 export const exclusions = [
   "Land cost, registration and stamp duty",
   "Government approval fees, development charges and deposits",
-  "Compound wall, gate, landscaping and external paving",
+  "Compound wall, gate, landscaping, external paving and exterior elevation work",
   "Borewell, sump beyond standard capacity, and water connection",
   "Lift, solar, air conditioning and home automation",
   "Modular kitchen, wardrobes and loose furniture",
