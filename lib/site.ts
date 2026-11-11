@@ -12,7 +12,7 @@ export const site = {
   /** Used for canonical URLs, sitemap and structured data. */
   url: "https://constructivevisions.com", // TODO domain not confirmed yet
 
-  founded: "2026",
+  founded: "2024",
 
   /* Main call line and WhatsApp: Janardhan (then Tejeswar, then Chaithanya).
      TODO replace the address and GST. */
@@ -63,9 +63,9 @@ export const founders = [
     no: "01",
     name: "Janardhan Reddy",
     phone: "+91 99897 35889",
-    role: "Founder — Planning & Estimation",
-    vertex: "Cost & schedule",
-    bio: "Prepares the bill of quantities, rate analysis and programme. Tracks stage-wise billing against work actually completed, so the cost never drifts quietly.",
+    role: "Founder — Planning, Estimation & Structural Design",
+    vertex: "Cost, schedule & structure",
+    bio: "Leads the structural design, prepares the bill of quantities, rate analysis and programme. Tracks stage-wise billing against work actually completed, so the cost never drifts quietly.",
   },
   {
     no: "02",
