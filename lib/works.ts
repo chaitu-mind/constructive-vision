@@ -49,7 +49,7 @@ export const works: Work[] = [
     config: "G+1",
     scope: "Turnkey — design to handover",
     duration: "11 months",
-    structure: "RCC framed, M25, isolated footings",
+    structure: "RCC framed, M20, isolated footings",
     note: "Four-bedroom duplex on a 40×60 site with a double-height stair well, a car porch cantilevered 2.1 m, and a rainwater harvesting pit to the rear setback.",
     detail: [
       "The plot fell about 900 mm from the road to the rear boundary, so the plinth was set high at the entrance and the level taken up in three steps rather than filling the whole footprint.",
@@ -75,7 +75,7 @@ export const works: Work[] = [
     config: "G+3, 8 units",
     scope: "Structure + finishes",
     duration: "18 months (in progress)",
-    structure: "RCC framed, M25, raft foundation",
+    structure: "RCC framed, M20, raft foundation",
     note: "Eight two-bedroom units over stilt parking. A raft foundation was adopted after the soil report returned a safe bearing capacity below 120 kN/m² at the founding level.",
     detail: [
       "Isolated footings were designed first, but the soil investigation returned a safe bearing capacity under 120 kN/m² at 1.8 m depth. The footings would have covered most of the plan area anyway, so the design changed to a raft.",
@@ -101,7 +101,7 @@ export const works: Work[] = [
     config: "G+2",
     scope: "Shell & core",
     duration: "9 months",
-    structure: "RCC framed, M25, 6.0 m clear spans",
+    structure: "RCC framed, M20, 6.0 m clear spans",
     note: "Column-free retail floors at 6.0 m spans with a glazed street elevation, handed over with services rough-in and a shell ready for three independent tenants.",
     detail: [
       "Retail tenants need clear floor plates, so the grid was set at 6.0 m and the beams deepened to 600 mm rather than dropping intermediate columns into the shop floor.",
@@ -127,7 +127,7 @@ export const works: Work[] = [
     config: "G",
     scope: "Design & build",
     duration: "8 months (in progress)",
-    structure: "RCC framed, M25, strip footings",
+    structure: "RCC framed, M20, strip footings",
     note: "Single-storey weekend house on a two-acre holding, with a 420 m compound wall, a bore well, and an approach road laid to the main gate.",
     detail: [
       "The site had no road access at the start. The approach road and the bore well were done first so material could reach the plot at all.",

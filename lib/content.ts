@@ -216,8 +216,8 @@ export const spec = {
   caption: "Standard specification — residential turnkey, Package A. Upgrades priced on request.",
   rows: [
     ["Foundation", "Isolated / raft footing to soil report", "IS 1904"],
-    ["Concrete", "M20 footing · M25 columns, beams, slabs", "IS 456:2000"],
-    ["Reinforcement", "Fe 500D TMT, ISI marked", "IS 1786"],
+    ["Concrete", "M20 for footings, columns, beams and slabs", "IS 456:2000"],
+    ["Reinforcement", "Fe 500D or FE 550D TMT, ISI marked", "IS 1786"],
     ["Cement", "OPC 53 grade structure · PPC masonry", "IS 269 / IS 1489"],
     ["Masonry", "AAC blocks 200 mm external · 100 mm internal", "IS 2185"],
     ["Plaster", "External 15 mm double coat · internal 12 mm", "1:5 / 1:6 CM"],
@@ -246,7 +246,7 @@ export const assurance = [
 export const faqs = [
   {
     q: "What does construction cost per square foot in Tirupati and Bengaluru?",
-    a: "It depends almost entirely on specification, not on the builder. A standard residential turnkey package using M25 concrete, Fe 500D steel, AAC blocks and vitrified flooring generally falls in a band we will quote you in writing (Bengaluru runs higher than Andhra Pradesh, mainly on labour) after seeing the plot and your drawings. Our published rates and a stage-by-stage breakdown are on the cost page, so you can do the sum yourself before calling anyone. We also publish the full material specification, so you can compare any two quotes line by line instead of comparing headline rates.",
+    a: "It depends almost entirely on specification, not on the builder. A standard residential turnkey package using M20 concrete, Fe 500D or FE 550D steel, AAC blocks and vitrified flooring generally falls in a band we will quote you in writing (Bengaluru runs higher than Andhra Pradesh, mainly on labour) after seeing the plot and your drawings. Our published rates and a stage-by-stage breakdown are on the cost page, so you can do the sum yourself before calling anyone. We also publish the full material specification, so you can compare any two quotes line by line instead of comparing headline rates.",
   },
   {
     q: "How long does a G+1 house take to build?",

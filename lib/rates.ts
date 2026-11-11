@@ -23,17 +23,16 @@ const structure = {
   group: "Structure",
   items: [
     "Excavation, PCC bed, isolated or raft footings as per structural design",
-    "RCC columns, beams, slabs and staircase in M25 concrete",
-    "Fe 500D TMT steel from a primary-producer brand, with mill test certificates",
+    "RCC columns, beams, slabs and staircase in M20 concrete",
+    "Fe 500D or FE 550D TMT steel from a primary-producer brand, with mill test certificates",
     "Cube tests for every pour and a photo record of reinforcement before casting",
-    "Anti-termite treatment at foundation level",
   ],
 };
 const masonry = (extra: string) => ({
   group: "Masonry & plaster",
   items: [
     "Solid or AAC block masonry, 9 in external and 4.5 in internal walls",
-    "12 mm internal and 15 mm external cement plaster, ceilings finished smooth",
+    "12 mm internal and 20 mm external cement plaster, ceilings finished smooth",
     "Minimal exterior elevation: plain plastered facade with simple bands and sill and lintel projections",
     extra,
   ],
@@ -43,13 +42,13 @@ export const packages: Package[] = [
   {
     id: "essential", name: "Essential", low: 1750, high: 1950,
     blurb: "A sound structure with honest, hard-wearing finishes. Nothing cut from what holds the building up.",
-    marks: ["M25 concrete", "Fe 500D TMT", "Vitrified flooring 600×600", "Flush internal doors", "Modular switches"],
+    marks: ["M20 concrete", "Fe 500D or FE 550D TMT", "Vitrified flooring 600×600", "Flush internal doors", "Modular switches"],
     inclusions: [
       structure,
       masonry("Plastering curing for a minimum of 7 days"),
       { group: "Flooring & tiling", items: [
         "Vitrified tiles 600×600 in living, dining and bedrooms",
-        "Anti-skid tiles in bathrooms and balcony, wall tiles to 7 ft in bathrooms and 2 ft above kitchen platform",
+        "Anti-skid tiles in bathrooms and balcony, wall tiles to 7 ft in bathrooms and 4 ft above kitchen platform",
         "Granite kitchen platform with stainless steel sink",
         "Tile skirting throughout",
       ]},
@@ -77,7 +76,7 @@ export const packages: Package[] = [
         "Enamel on grills and railings",
       ]},
       { group: "Waterproofing & finishing", items: [
-        "Terrace, bathrooms and sunk slabs waterproofed, with a flood test before tiling",
+        "Terrace, bathrooms and sunk slabs waterproofed",
         "MS railings for staircase and balcony",
         "Final cleaning before handover",
       ]},
@@ -86,13 +85,13 @@ export const packages: Package[] = [
   {
     id: "standard", name: "Standard", low: 2000, high: 2300,
     blurb: "What most owners choose. Better fittings and joinery on the same structural specification.",
-    marks: ["M25 concrete", "Fe 500D TMT", "Vitrified flooring 800×800", "Teak main door", "UPVC windows", "Branded CP fittings"],
+    marks: ["M20 concrete", "Fe 500D or FE 550D TMT", "Vitrified flooring 800×800", "Teak main door", "UPVC windows", "Branded CP fittings"],
     inclusions: [
       structure,
       masonry("Plastering curing for a minimum of 7 days"),
       { group: "Flooring & tiling", items: [
         "Vitrified tiles 800×800 in living, dining and bedrooms",
-        "Anti-skid tiles in bathrooms and balcony, wall tiles to 7 ft in bathrooms and 2 ft above kitchen platform",
+        "Anti-skid tiles in bathrooms and balcony, wall tiles to 7 ft in bathrooms and 4 ft above kitchen platform",
         "Granite kitchen platform with stainless steel sink",
         "Tile skirting throughout",
       ]},
@@ -121,7 +120,7 @@ export const packages: Package[] = [
         "Enamel on grills and railings",
       ]},
       { group: "Waterproofing & finishing", items: [
-        "Terrace, bathrooms and sunk slabs waterproofed, with a flood test before tiling",
+        "Terrace, bathrooms and sunk slabs waterproofed",
         "MS railings for staircase and balcony",
         "Final cleaning before handover",
       ]},
@@ -130,7 +129,7 @@ export const packages: Package[] = [
   {
     id: "premium", name: "Premium", low: 2400, high: 2900,
     blurb: "Imported and designer finishes, deeper joinery, and a longer finishing programme.",
-    marks: ["M25 concrete", "Fe 500D TMT", "Large-format or natural stone", "Teak joinery throughout", "Concealed fittings", "False ceiling across"],
+    marks: ["M20 concrete", "Fe 500D or FE 550D TMT", "Large-format or natural stone", "Teak joinery throughout", "Concealed fittings", "False ceiling across"],
     inclusions: [
       structure,
       masonry("Gypsum or putty-finished walls on request"),
@@ -165,7 +164,7 @@ export const packages: Package[] = [
       ]},
       { group: "Ceilings & finishing", items: [
         "Gypsum false ceiling in living, dining, bedrooms and passage, with cove lighting",
-        "Terrace, bathrooms and sunk slabs waterproofed, with a flood test before tiling",
+        "Terrace, bathrooms and sunk slabs waterproofed",
         "Glass or stainless steel railings for staircase and balcony",
         "Final cleaning before handover",
       ]},
