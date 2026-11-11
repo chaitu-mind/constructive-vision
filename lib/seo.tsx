@@ -26,7 +26,7 @@ export function businessJsonLd() {
     description: `${site.name} is a civil engineering and construction practice in ${site.city}, building turnkey residential, commercial and interior projects across ${site.region}.`,
     slogan: "Your vision, engineered to last.",
     foundingDate: site.founded,
-    telephone: site.phone,
+    telephone: founders.slice(0, 2).map((f) => f.phone),
     email: site.email,
     address: postalAddress,
     geo: { "@type": "GeoCoordinates", latitude: site.geo.lat, longitude: site.geo.lng },
