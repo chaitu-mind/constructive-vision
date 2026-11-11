@@ -16,7 +16,6 @@ const pillars = [
   { k: "IS 456:2000", v: "Structural design to code" },
   { k: "Stage-wise", v: "Pay only for finished work" },
   { k: "Weekly", v: "Dated site photo reports" },
-  { k: "12 months", v: "Defect liability after handover" },
 ];
 
 export default function Home() {

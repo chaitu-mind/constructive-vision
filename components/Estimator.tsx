@@ -14,7 +14,7 @@ const inr = (n: number) =>
 const lakh = (n: number) => (n / 100000).toFixed(n < 1000000 ? 1 : 0);
 
 export default function Estimator() {
-  const [plot, setPlot] = useState(200);
+  const [plot, setPlot] = useState(1800);
   const [floors, setFloors] = useState(2);
   const [pkgId, setPkgId] = useState<"essential" | "standard" | "premium">("standard");
   const [manual, setManual] = useState<number | "">("");
@@ -23,7 +23,7 @@ export default function Estimator() {
 
   const derived = useMemo(() => {
     const coverage = coverageFor(plot);
-    const perFloor = Math.round(plot * 9 * coverage);
+    const perFloor = Math.round(plot * coverage);
     const builtUp = manual === "" ? perFloor * floors : Number(manual);
     const low = builtUp * pkg.low;
     const high = builtUp * pkg.high;
@@ -35,11 +35,11 @@ export default function Estimator() {
     <div className="est">
       <form className="est__form" onSubmit={(e) => e.preventDefault()}>
         <div className="field">
-          <label htmlFor="e-plot">Plot area, in square yards</label>
-          <input id="e-plot" type="number" min={50} max={4000} step={10} value={plot}
-            onChange={(e) => setPlot(Math.max(50, Number(e.target.value) || 0))} />
+          <label htmlFor="e-plot">Plot area, in square feet</label>
+          <input id="e-plot" type="number" min={450} max={36000} step={50} value={plot}
+            onChange={(e) => setPlot(Math.max(450, Number(e.target.value) || 0))} />
           <span className="field__note mono">
-            {inr(plot * 9)} sq.ft · typical coverage after setbacks {Math.round(derived.coverage * 100)}%
+            {inr(plot / 9)} sq.yd · typical coverage after setbacks {Math.round(derived.coverage * 100)}%
           </span>
         </div>
 

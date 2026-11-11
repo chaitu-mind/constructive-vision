@@ -75,8 +75,8 @@ export const exclusions = [
 
 /** Typical ground coverage after setbacks, as a share of plot area.
  *  Plot-size dependent because setbacks do not scale with the plot. */
-export const coverageFor = (plotSqYd: number) =>
-  plotSqYd <= 150 ? 0.72 : plotSqYd <= 300 ? 0.66 : plotSqYd <= 600 ? 0.6 : 0.55;
+export const coverageFor = (plotSqFt: number) =>
+  plotSqFt <= 1350 ? 0.72 : plotSqFt <= 2700 ? 0.66 : plotSqFt <= 5400 ? 0.6 : 0.55;
 
 /** Rough programme, in months, from foundation to handover. */
 export const durationMonths = (builtUp: number, floors: number) =>
