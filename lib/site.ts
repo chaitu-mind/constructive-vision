@@ -14,9 +14,9 @@ export const site = {
 
   founded: "2026",
 
-  /* Main line: Chaithanya (client & design). TODO replace the address and GST. */
+  /* Main call line: Chaithanya. WhatsApp: Janardhan. TODO replace the address and GST. */
   phone: "+91 93813 74502",
-  whatsapp: "919381374502", // digits only, country code first
+  whatsapp: "919989735889", // digits only, country code first
   email: "hello@constructivevisions.com", // TODO depends on the confirmed domain
   street: "Door No. 0-00, Main Road",
   gst: "GSTIN — to be issued",
