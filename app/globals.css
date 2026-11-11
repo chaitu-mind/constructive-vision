@@ -232,7 +232,7 @@ a.topbar__item:hover{ color:#fff; }
 .hero__call small{ display:block; font-size:var(--fs-xs); color:#A9C0CE; font-weight:500; margin-bottom:6px; }
 .hero__callbody ul{ list-style:none; margin:0; padding:0; display:grid; gap:4px; }
 .hero__callbody li{ display:flex; align-items:baseline; gap:14px; }
-.hero__callbody li span{ min-width:84px; font-size:var(--fs-sm); font-weight:600; color:var(--accent-soft); }
+.hero__callbody li span{ min-width:140px; font-size:var(--fs-sm); font-weight:600; color:var(--accent-soft); }
 .hero__callbody li a{ font-family:var(--display); font-size:1.35rem; font-weight:700; letter-spacing:.02em; line-height:1.25; text-decoration:none; color:#fff; }
 .hero__callbody li a:hover{ color:var(--accent-soft); }
 .hero__callicon{
@@ -449,7 +449,7 @@ a.topbar__item:hover{ color:#fff; }
 .ctaband__calls{ display:grid; gap:14px; }
 .ctaband__label{ font-size:var(--fs-sm); font-weight:500; color:#9DB4C2; }
 .ctaband__phone{ text-decoration:none; font-family:var(--display); font-size:clamp(1.5rem, 2.8vw, 2rem); font-weight:800; color:#fff; line-height:1.1; display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; }
-.ctaband__phone small{ font-family:var(--body); font-size:var(--fs-sm); font-weight:600; color:var(--accent-soft); min-width:84px; }
+.ctaband__phone small{ font-family:var(--body); font-size:var(--fs-sm); font-weight:600; color:var(--accent-soft); min-width:140px; }
 .ctaband__phone:hover{ color:var(--accent-soft); }
 
 /* ---- Inner page banner ---- */

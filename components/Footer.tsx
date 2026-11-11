@@ -39,7 +39,7 @@ export default function Footer() {
             <a href={waLink(`Hello ${site.name}, I would like an estimate.`)} target="_blank" rel="noopener">WhatsApp us</a>
             <ul className="foot__people">
               {founders.map((f) => (
-                <li key={f.name}><span>{f.name.split(" ")[0]}</span><a href={telLink(f.phone)}>{f.phone}</a></li>
+                <li key={f.name}><span>{f.name}</span><a href={telLink(f.phone)}>{f.phone}</a></li>
               ))}
             </ul>
             <span>{site.street}, {site.city} {site.postal}</span>

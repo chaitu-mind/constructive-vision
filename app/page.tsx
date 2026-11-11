@@ -54,7 +54,7 @@ export default function Home() {
               <ul>
                 {founders.map((f) => (
                   <li key={f.name}>
-                    <span>{f.name.split(" ")[0]}</span>
+                    <span>{f.name}</span>
                     <a href={telLink(f.phone)}>{f.phone}</a>
                   </li>
                 ))}
