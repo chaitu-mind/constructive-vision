@@ -15,12 +15,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const w = getWork(slug);
   if (!w) return {};
-  const title = `${w.name} — ${w.config}, ${w.locality}`;
+  const title = `${w.name}, ${w.locality}`;
   return {
     title,
     description: w.note,
     alternates: { canonical: `/works/${w.slug}/` },
-    openGraph: { title: `${w.name} — ${site.name}`, description: w.note, url: `/works/${w.slug}/`, type: "article" },
+    openGraph: { title: `${w.name} — ${site.name}`, description: w.note, url: `/works/${w.slug}/`, type: "article", images: [{ url: w.photo ? w.photo.replace("-md.webp", ".webp") : "/og.png", alt: `${w.name}, ${w.location}` }] },
     // A sample entry must never be indexed as if it were real work.
     robots: w.sample ? { index: false, follow: true } : undefined,
   };

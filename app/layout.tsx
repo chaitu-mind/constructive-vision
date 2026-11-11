@@ -2,13 +2,14 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Manrope } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FloatingActions from "@/components/FloatingActions";
 import { site } from "@/lib/site";
 import { businessJsonLd, websiteJsonLd, JsonLd } from "@/lib/seo";
 import "./globals.css";
 
 /* Self-hosted at build time: no third-party request, no render-blocking
    stylesheet, no layout shift. All three matter for Core Web Vitals. */
-const display = Manrope({ subsets: ["latin"], weight: ["600", "700", "800"], variable: "--font-display", display: "swap" });
+const display = Manrope({ subsets: ["latin"], weight: ["300", "400", "600", "700", "800"], variable: "--font-display", display: "swap" });
 const body = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-body", display: "swap" });
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     template: `%s — ${site.name}`,
   },
   description:
-    `${site.name} builds turnkey homes, commercial shells and interiors across ${site.region}. Published material specification, stage-wise billing and a written agreement on every project.`,
+    `Turnkey homes, commercial buildings and interiors across ${site.region}. Published specification, stage-wise billing and a written agreement on every project.`,
   applicationName: site.name,
   authors: [{ name: site.legal }],
   generator: "Next.js",
@@ -78,6 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main id="main">{children}</main>
         <Footer />
+        <FloatingActions />
       </body>
     </html>
   );

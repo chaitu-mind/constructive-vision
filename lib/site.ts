@@ -1,23 +1,23 @@
 /* ============================================================
-   Constructive Visions — firm identity.
+   Constructive Vision — firm identity.
    EDIT THIS FILE FIRST. Every value marked TODO is a placeholder.
    ============================================================ */
 
 export const site = {
-  name: "Constructive Visions",
-  legal: "Constructive Visions LLP", // TODO confirm the registered entity type
-  short: "Constructive Visions",
+  name: "Constructive Vision",
+  legal: "Constructive Visions LLP", // TODO registered legal name not confirmed yet
+  short: "Constructive Vision",
   tagline: "Civil engineering & construction",
 
   /** Used for canonical URLs, sitemap and structured data. */
-  url: "https://constructivevisions.com", // TODO confirm the domain you register
+  url: "https://constructivevisions.com", // TODO domain not confirmed yet
 
   founded: "2026",
 
   /* Main line: Chaithanya (client & design). TODO replace the address and GST. */
   phone: "+91 93813 74502",
   whatsapp: "919381374502", // digits only, country code first
-  email: "hello@constructivevisions.com",
+  email: "hello@constructivevisions.com", // TODO depends on the confirmed domain
   street: "Door No. 0-00, Main Road",
   gst: "GSTIN — to be issued",
 
@@ -43,6 +43,12 @@ export const site = {
     "Bengaluru Rural",
     "Kolar",
     "Mysuru",
+  ],
+
+  /* Shown on the home page, grouped by state. Keep in step with areaServed. */
+  areaGroups: [
+    { state: "Andhra Pradesh", places: ["Tirupati", "Chittoor", "Nellore", "Kadapa", "Anantapur", "Kurnool", "Vijayawada"] },
+    { state: "Karnataka", places: ["Bengaluru", "Bengaluru Rural", "Kolar", "Mysuru"] },
   ],
 
   hours: "Mo-Sa 09:00-19:00",

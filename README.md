@@ -1,4 +1,4 @@
-# Constructive Visions — website
+# Constructive Vision — website
 
 A 22-page Next.js site that exports to plain static HTML. No server, no database,
 nothing that can go down. It deploys free on Cloudflare Pages, Netlify or GitHub
@@ -195,7 +195,7 @@ the top of `app/globals.css`.
 
 ## 6. On the name
 
-Before printing anything with **Constructive Visions** on it, run three checks:
+Before printing anything with **Constructive Vision** on it, run three checks:
 
 - **Trademark, class 37** (building construction), free at
   `ipindiaonline.gov.in/tmrsearch/tmrsearchmain.htm`

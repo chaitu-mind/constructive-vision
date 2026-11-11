@@ -22,7 +22,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: at(`/services/${c.slug}/`), lastModified: now,
       changeFrequency: "yearly" as const, priority: 0.8,
     })),
-    ...works.map((w) => ({
+    // sample projects are noindex, so they must not be listed for crawlers
+    ...works.filter((w) => !w.sample).map((w) => ({
       url: at(`/works/${w.slug}/`), lastModified: now,
       changeFrequency: "yearly" as const, priority: 0.6,
     })),

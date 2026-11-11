@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     title: `House construction cost calculator — ${site.name}`,
     description: `Plot size and floors in, a stage-by-stage cost breakdown out. Published rates, nothing hidden.`,
     url: "/estimate/", type: "article",
+    images: [{ url: "/og.png", alt: site.name }],
   },
 };
 

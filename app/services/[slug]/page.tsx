@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${c.title} in ${site.city}`,
     description: c.desc,
     alternates: { canonical: `/services/${c.slug}/` },
-    openGraph: { title: `${c.title} — ${site.name}`, description: c.desc, url: `/services/${c.slug}/`, type: "article" },
+    openGraph: { title: `${c.title} — ${site.name}`, description: c.desc, url: `/services/${c.slug}/`, type: "article", images: [{ url: `/images/${serviceImage(c.slug)}.webp`, alt: c.title }] },
   };
 }
 
@@ -69,7 +69,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <div className="wrap">
           <div className="twocol">
             <div>
-              <figure className="svcfig"><img src={img(serviceImage(c.slug))} alt="" /></figure>
+              <figure className="svcfig"><img src={img(serviceImage(c.slug))} alt={`${c.title} in ${site.city}`} /></figure>
               <div className="block">
                 <h2>What the engagement includes</h2>
                 <ul className="ticks">{c.includes.map((x) => <li key={x}>{x}</li>)}</ul>
