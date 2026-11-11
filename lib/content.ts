@@ -238,7 +238,6 @@ export const assurance = [
   { title: "Weekly photo record", desc: "Dated site photographs and a short progress note every week, so an owner living abroad sees exactly what an owner standing on site would." },
   { title: "Third-party cube testing", desc: "Concrete samples from every major pour go to an independent lab. Reports are handed to you, pass or fail." },
   { title: "Rates that do not move", desc: "The quoted rate holds for the agreed scope. Changes are priced and approved in writing before the work is done, never billed as a surprise." },
-  { title: "Twelve-month defect liability", desc: "Any workmanship defect reported within a year of handover is rectified at our cost, in writing as part of the agreement." },
 ] as const;
 
 /* These feed both the page and FAQ structured data, which is what Google

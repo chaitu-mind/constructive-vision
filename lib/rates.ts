@@ -34,6 +34,7 @@ const masonry = (extra: string) => ({
   items: [
     "Solid or AAC block masonry, 9 in external and 4.5 in internal walls",
     "12 mm internal and 15 mm external cement plaster, ceilings finished smooth",
+    "Minimal exterior elevation: plain plastered facade with simple bands and sill and lintel projections",
     extra,
   ],
 });
@@ -177,7 +178,7 @@ export const packages: Package[] = [
 export const costSplit: { stage: string; pct: number; note: string }[] = [
   { stage: "Excavation & foundation", pct: 11, note: "Earthwork, footings, plinth beam, backfill" },
   { stage: "RCC structure", pct: 27, note: "Columns, beams, slabs, staircase. Steel and concrete" },
-  { stage: "Masonry & plaster", pct: 11, note: "Block work, internal and external plaster" },
+  { stage: "Masonry & plaster", pct: 11, note: "Block work, internal and external plaster, minimal exterior elevation" },
   { stage: "Flooring & tiling", pct: 9, note: "Living areas, bedrooms, wet areas, skirting" },
   { stage: "Doors & windows", pct: 9, note: "Frames, shutters, glazing, grills, hardware" },
   { stage: "Electrical", pct: 7, note: "Conduits, wiring, boards, points, fixtures" },
@@ -189,13 +190,13 @@ export const costSplit: { stage: string; pct: number; note: string }[] = [
 
 /** Stage-wise billing. You pay against work measured, not a calendar. */
 export const paymentSchedule: { at: string; pct: number }[] = [
-  { at: "On signing the agreement", pct: 10 },
-  { at: "Foundation and plinth complete", pct: 15 },
+  { at: "On signing the agreement", pct: 20 },
+  { at: "Foundation and plinth complete", pct: 10 },
   { at: "Ground floor slab cast", pct: 15 },
   { at: "Upper slabs cast", pct: 15 },
   { at: "Masonry and plaster complete", pct: 15 },
-  { at: "Flooring, doors and windows complete", pct: 15 },
-  { at: "Electrical, plumbing and painting complete", pct: 10 },
+  { at: "Flooring, doors and windows complete", pct: 12 },
+  { at: "Electrical, plumbing and painting complete", pct: 8 },
   { at: "Handover after snag clearance", pct: 5 },
 ];
 
@@ -203,7 +204,7 @@ export const paymentSchedule: { at: string; pct: number }[] = [
 export const exclusions = [
   "Land cost, registration and stamp duty",
   "Government approval fees, development charges and deposits",
-  "Compound wall, gate, landscaping and external paving",
+  "Compound wall, gate, landscaping, external paving and elevation work beyond the minimal plain elevation",
   "Borewell, sump beyond standard capacity, and water connection",
   "Lift, solar, air conditioning and home automation",
   "Modular kitchen, wardrobes and loose furniture",
