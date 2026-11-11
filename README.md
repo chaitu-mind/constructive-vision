@@ -80,7 +80,7 @@ keep it lowercase with hyphens.
   area: "3,850 sq.ft", config: "G+1",
   scope: "Turnkey — design to handover",
   duration: "11 months",
-  structure: "RCC framed, M25, isolated footings",
+  structure: "RCC framed, M20, isolated footings",
   note: "One paragraph a client would care about.",
   detail: ["Longer paragraphs.", "One per array entry."],
   photo: "/images/w07.jpg",          // or null

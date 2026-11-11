@@ -23,7 +23,7 @@ const structure = {
   group: "Structure",
   items: [
     "Excavation, PCC bed, isolated or raft footings as per structural design",
-    "RCC columns, beams, slabs and staircase in M25 concrete",
+    "RCC columns, beams, slabs and staircase in M20 concrete",
     "Fe 500D TMT steel from a primary-producer brand, with mill test certificates",
     "Cube tests for every pour and a photo record of reinforcement before casting",
     "Anti-termite treatment at foundation level",
@@ -43,7 +43,7 @@ export const packages: Package[] = [
   {
     id: "essential", name: "Essential", low: 1750, high: 1950,
     blurb: "A sound structure with honest, hard-wearing finishes. Nothing cut from what holds the building up.",
-    marks: ["M25 concrete", "Fe 500D TMT", "Vitrified flooring 600×600", "Flush internal doors", "Modular switches"],
+    marks: ["M20 concrete", "Fe 500D TMT", "Vitrified flooring 600×600", "Flush internal doors", "Modular switches"],
     inclusions: [
       structure,
       masonry("Plastering curing for a minimum of 7 days"),
@@ -86,7 +86,7 @@ export const packages: Package[] = [
   {
     id: "standard", name: "Standard", low: 2000, high: 2300,
     blurb: "What most owners choose. Better fittings and joinery on the same structural specification.",
-    marks: ["M25 concrete", "Fe 500D TMT", "Vitrified flooring 800×800", "Teak main door", "UPVC windows", "Branded CP fittings"],
+    marks: ["M20 concrete", "Fe 500D TMT", "Vitrified flooring 800×800", "Teak main door", "UPVC windows", "Branded CP fittings"],
     inclusions: [
       structure,
       masonry("Plastering curing for a minimum of 7 days"),
@@ -130,7 +130,7 @@ export const packages: Package[] = [
   {
     id: "premium", name: "Premium", low: 2400, high: 2900,
     blurb: "Imported and designer finishes, deeper joinery, and a longer finishing programme.",
-    marks: ["M25 concrete", "Fe 500D TMT", "Large-format or natural stone", "Teak joinery throughout", "Concealed fittings", "False ceiling across"],
+    marks: ["M20 concrete", "Fe 500D TMT", "Large-format or natural stone", "Teak joinery throughout", "Concealed fittings", "False ceiling across"],
     inclusions: [
       structure,
       masonry("Gypsum or putty-finished walls on request"),
