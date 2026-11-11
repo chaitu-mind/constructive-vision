@@ -442,8 +442,11 @@ a.topbar__item:hover{ color:#fff; }
 .ctaband h2{ font-size:var(--fs-2xl); font-weight:800; margin-top:14px; }
 .ctaband__in > div:first-child > p:last-child{ margin-top:16px; color:#B6C8D3; max-width:54ch; }
 .ctaband__side{ display:grid; gap:22px; justify-items:start; }
-.ctaband__phone{ text-decoration:none; font-family:var(--display); font-size:clamp(1.8rem, 3.4vw, 2.5rem); font-weight:800; color:#fff; line-height:1.05; }
-.ctaband__phone span{ display:block; font-family:var(--body); font-size:var(--fs-sm); font-weight:500; color:#9DB4C2; margin-bottom:6px; }
+.ctaband__calls{ display:grid; gap:14px; }
+.ctaband__label{ font-size:var(--fs-sm); font-weight:500; color:#9DB4C2; }
+.ctaband__phone{ text-decoration:none; font-family:var(--display); font-size:clamp(1.5rem, 2.8vw, 2rem); font-weight:800; color:#fff; line-height:1.1; display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; }
+.ctaband__phone small{ font-family:var(--body); font-size:var(--fs-sm); font-weight:600; color:var(--accent-soft); min-width:84px; }
+.ctaband__phone:hover{ color:var(--accent-soft); }
 
 /* ---- Inner page banner ---- */
 .phead{

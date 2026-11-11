@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { img } from "@/lib/images";
-import { site, telLink } from "@/lib/site";
+import { founders, telLink } from "@/lib/site";
 
 export function Crumbs({ trail }: { trail: { name: string; path: string }[] }) {
   return (
@@ -67,10 +67,15 @@ export function Cta({ title, body, image = "tower-cranes" }: { title: string; bo
           <p>{body}</p>
         </div>
         <div className="ctaband__side">
-          <a className="ctaband__phone" href={telLink()}>
-            <span>Call us directly</span>
-            {site.phone}
-          </a>
+          <div className="ctaband__calls">
+            <span className="ctaband__label">Call us directly</span>
+            {founders.slice(0, 2).map((f) => (
+              <a key={f.name} className="ctaband__phone" href={telLink(f.phone)}>
+                <small>{f.name.split(" ")[0]}</small>
+                {f.phone}
+              </a>
+            ))}
+          </div>
           <div className="cta__btns">
             <Link className="btn" href="/contact/">Get an estimate</Link>
             <Link className="btn btn--outline-light" href="/estimate/">Cost calculator</Link>
