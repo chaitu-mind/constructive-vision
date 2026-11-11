@@ -4,7 +4,7 @@ import { SectionHead, Cta } from "@/components/PageHeader";
 import ServiceCard from "@/components/ServiceCard";
 import WorkCard from "@/components/WorkCard";
 import { site, founders, telLink } from "@/lib/site";
-import { capabilities, assurance, method } from "@/lib/content";
+import { capabilities, assurance, method, faqs } from "@/lib/content";
 import { works } from "@/lib/works";
 import { img, heroSlides } from "@/lib/images";
 
@@ -185,6 +185,39 @@ export default function Home() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Areas served */}
+      <section className="sec sec--grey">
+        <div className="wrap">
+          <SectionHead center eyebrow="Where we build" title={`Building across ${site.region}`}
+            lede={`Head office in ${site.city}. We take projects in the towns and districts below, and will travel further for the right job.`} />
+          <div className="areas">
+            {site.areaGroups.map((g) => (
+              <div className="areas__col" key={g.state}>
+                <h3>{g.state}</h3>
+                <ul>{g.places.map((p) => <li key={p}>{p}</li>)}</ul>
+              </div>
+            ))}
+          </div>
+          <div className="center"><Link className="btn" href="/contact/">Check we cover your plot</Link></div>
+        </div>
+      </section>
+
+      {/* FAQ preview */}
+      <section className="sec">
+        <div className="wrap">
+          <SectionHead center eyebrow="Questions" title="What owners ask us first" />
+          <div className="faq faq--center">
+            {faqs.slice(0, 4).map((f) => (
+              <details key={f.q}>
+                <summary><h3>{f.q}</h3></summary>
+                <div className="a">{f.a}</div>
+              </details>
+            ))}
+          </div>
+          <div className="center"><Link className="btn btn--ghost" href="/faq/">All questions</Link></div>
         </div>
       </section>
 

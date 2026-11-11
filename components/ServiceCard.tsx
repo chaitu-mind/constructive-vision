@@ -6,7 +6,7 @@ export default function ServiceCard({ c, long = false, as: As = "h3" }: { c: Cap
   return (
     <Link className="svc" href={`/services/${c.slug}/`}>
       <span className="svc__img">
-        <img src={img(serviceImage(c.slug), "md")} alt="" loading="lazy" />
+        <img src={img(serviceImage(c.slug), "md")} alt={`${c.title} by Constructive Vision`} loading="lazy" />
         <span className="svc__no">{c.ref.replace("C.", "")}</span>
       </span>
       <span className="svc__body">

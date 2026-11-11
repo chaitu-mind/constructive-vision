@@ -45,6 +45,12 @@ export const site = {
     "Mysuru",
   ],
 
+  /* Shown on the home page, grouped by state. Keep in step with areaServed. */
+  areaGroups: [
+    { state: "Andhra Pradesh", places: ["Tirupati", "Chittoor", "Nellore", "Kadapa", "Anantapur", "Kurnool", "Vijayawada"] },
+    { state: "Karnataka", places: ["Bengaluru", "Bengaluru Rural", "Kolar", "Mysuru"] },
+  ],
+
   hours: "Mo-Sa 09:00-19:00",
 
   revision: "A",

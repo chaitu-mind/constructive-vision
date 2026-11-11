@@ -33,11 +33,16 @@ export function businessJsonLd() {
     openingHours: site.hours,
     priceRange: "₹₹",
     currenciesAccepted: "INR",
-    knowsLanguage: ["en", "te", "hi"],
-    areaServed: site.areaServed.map((n) => ({ "@type": "City", name: n })),
+    image: [abs("/og.png")],
+    logo: abs("/icon.png"),
+    knowsLanguage: ["en", "te", "kn", "hi"],
+    areaServed: [
+      { "@type": "State", name: "Andhra Pradesh" },
+      { "@type": "State", name: "Karnataka" },
+      ...site.areaServed.map((n) => ({ "@type": "City", name: n })),
+    ],
     founder: founders.map((f) => ({ "@type": "Person", name: f.name, jobTitle: f.role, telephone: f.phone })),
-    employee: founders.map((f) => ({ "@type": "Person", name: f.name, jobTitle: f.role })),
-    hasOfferCatalog: {
+        hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Construction services",
       itemListElement: capabilities.map((c) => ({
@@ -85,7 +90,7 @@ export function workJsonLd(w: Work) {
     description: w.note,
     dateCreated: w.year,
     creator: { "@id": abs("/#organisation") },
-    locationCreated: { "@type": "Place", name: w.location, address: { "@type": "PostalAddress", addressLocality: w.locality, addressRegion: site.state, addressCountry: site.country } },
+    locationCreated: { "@type": "Place", name: w.location, address: { "@type": "PostalAddress", addressLocality: w.locality, addressRegion: /bengaluru|karnataka/i.test(w.location) ? "Karnataka" : "Andhra Pradesh", addressCountry: site.country } },
     about: w.category,
     ...(w.photo ? { image: abs(w.photo) } : {}),
   };
