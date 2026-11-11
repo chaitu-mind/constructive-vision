@@ -38,8 +38,8 @@ export default function Estimator() {
       <form className="est__form" onSubmit={(e) => e.preventDefault()}>
         <div className="field">
           <label htmlFor="e-plot">Plot area, in square feet</label>
-          <input id="e-plot" type="number" min={450} max={36000} step={50} value={plotText}
-            onChange={(e) => setPlotText(e.target.value)}
+          <input id="e-plot" type="number" min={0} max={36000} step={50} value={plotText}
+            onChange={(e) => setPlotText(e.target.value)}      
             onBlur={() => setPlotText(String(plot))} />
           <span className="field__note mono">
             {inr(plot / 9)} sq.yd · typical coverage after setbacks {Math.round(derived.coverage * 100)}%

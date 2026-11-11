@@ -189,13 +189,13 @@ export const costSplit: { stage: string; pct: number; note: string }[] = [
 
 /** Stage-wise billing. You pay against work measured, not a calendar. */
 export const paymentSchedule: { at: string; pct: number }[] = [
-  { at: "On signing the agreement", pct: 10 },
-  { at: "Foundation and plinth complete", pct: 15 },
+  { at: "On signing the agreement", pct: 20 },
+  { at: "Foundation and plinth complete", pct: 10 },
   { at: "Ground floor slab cast", pct: 15 },
   { at: "Upper slabs cast", pct: 15 },
   { at: "Masonry and plaster complete", pct: 15 },
-  { at: "Flooring, doors and windows complete", pct: 15 },
-  { at: "Electrical, plumbing and painting complete", pct: 10 },
+  { at: "Flooring, doors and windows complete", pct: 12 },
+  { at: "Electrical, plumbing and painting complete", pct: 8 },
   { at: "Handover after snag clearance", pct: 5 },
 ];
 
