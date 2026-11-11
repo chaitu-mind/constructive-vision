@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Manrope } from "next/font/google";
+import localFont from "next/font/local";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
@@ -7,10 +7,10 @@ import { site } from "@/lib/site";
 import { businessJsonLd, websiteJsonLd, JsonLd } from "@/lib/seo";
 import "./globals.css";
 
-/* Self-hosted at build time: no third-party request, no render-blocking
-   stylesheet, no layout shift. All three matter for Core Web Vitals. */
-const display = Manrope({ subsets: ["latin"], weight: ["300", "400", "600", "700", "800"], variable: "--font-display", display: "swap" });
-const body = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-body", display: "swap" });
+/* Self-hosted from ./fonts: no third-party request at build or runtime, so
+   the build cannot fail on a blocked Google Fonts download. */
+const display = localFont({ src: "./fonts/manrope-latin-wght-normal.woff2", weight: "200 800", variable: "--font-display", display: "swap" });
+const body = localFont({ src: "./fonts/inter-latin-wght-normal.woff2", weight: "100 900", variable: "--font-body", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
