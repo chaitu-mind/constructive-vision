@@ -78,6 +78,12 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
                 </figcaption>
               </figure>
 
+              {w.gallery && (
+                <div className="wgallery">
+                  {w.gallery.map((g) => <img key={g.src} src={g.src} alt={g.alt} loading="lazy" />)}
+                </div>
+              )}
+
               <div className="prose" style={{ marginTop: 34 }}>
                 <h2 style={{ fontSize: "var(--fs-xl)" }}>On this project</h2>
                 {w.detail.map((p, n) => <p key={n}>{p}</p>)}
