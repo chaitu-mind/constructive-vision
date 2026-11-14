@@ -629,6 +629,8 @@ a.topbar__item:hover{ color:#fff; }
 @media (min-width:960px){ .wdetail{ grid-template-columns:1.4fr .8fr; align-items:start; } }
 .wplate{ margin:0; border-radius:var(--radius); overflow:hidden; background:var(--paper-sunk); color:var(--ink-soft); box-shadow:var(--shadow); }
 .wplate img{ width:100%; aspect-ratio:16/10; object-fit:cover; }
+.wgallery{ display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); margin-top:12px; }
+.wgallery img{ width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:var(--radius); box-shadow:var(--shadow); }
 .wplate svg{ padding:18px; }
 .wplate figcaption{ padding:12px 18px; background:var(--dark); color:#B6C8D3; font-size:var(--fs-xs); font-weight:600; }
 .wfacts{ display:grid; gap:0; background:#fff; border:1px solid var(--rule); border-top:3px solid var(--dark); border-radius:var(--radius); margin:0; }
