@@ -10,7 +10,7 @@ export default function CardSlides({ slides, delay = 0 }: { slides: { src: strin
   useEffect(() => {
     if (n < 2 || paused) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const id = setTimeout(() => setI((k) => (k + 1) % n), i === 0 && delay ? 3200 + delay : 3200);
+    const id = setTimeout(() => setI((k) => (k + 1) % n), i === 0 && delay ? 1000 + delay : 1000);
     return () => clearTimeout(id);
   }, [i, n, paused, delay]);
 

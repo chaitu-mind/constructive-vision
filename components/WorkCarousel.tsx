@@ -9,24 +9,32 @@ export default function WorkCarousel({ slides, caption }: { slides: Slide[]; cap
   const [paused, setPaused] = useState(false);
   const n = slides.length;
 
+  // Slide over exactly 0.5s (browser smooth-scroll length can't be set).
   const go = (k: number) => {
     const t = track.current; if (!t) return;
     const idx = (k + n) % n;
-    t.scrollTo({ left: idx * t.clientWidth, behavior: "smooth" });
     setI(idx);
+    const from = t.scrollLeft, to = idx * t.clientWidth, t0 = performance.now(), D = 500;
+    t.style.scrollSnapType = "none";
+    const step = (now: number) => {
+      const p = Math.min(1, (now - t0) / D), e = p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+      t.scrollLeft = from + (to - from) * e;
+      if (p < 1) requestAnimationFrame(step); else t.style.scrollSnapType = "";
+    };
+    requestAnimationFrame(step);
   };
-  // Auto-advance every 4s; pauses on hover, focus or touch, and is off for reduced-motion users.
-  useEffect(() => {
-    if (n < 2 || paused) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const id = setTimeout(() => go(i + 1), 4000);
-    return () => clearTimeout(id);
-  }); // eslint-disable-line react-hooks/exhaustive-deps
-
   const onScroll = () => {
     const t = track.current; if (!t) return;
     setI(Math.round(t.scrollLeft / t.clientWidth));
   };
+
+  // Auto-advance every 1s; pauses on hover, focus or touch, and is off for reduced-motion users.
+  useEffect(() => {
+    if (n < 2 || paused) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = setTimeout(() => go(i + 1), 1000);
+    return () => clearTimeout(id);
+  }); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <figure className="wcar" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onFocus={() => setPaused(true)} onBlur={() => setPaused(false)} onTouchStart={() => setPaused(true)} onTouchEnd={() => setPaused(false)} aria-roledescription="carousel" aria-label={caption}
