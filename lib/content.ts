@@ -226,7 +226,7 @@ export const spec = {
     ["Plumbing", "CPVC supply · PVC drainage, concealed", "IS 15778"],
     ["Doors", "Teak frame, main door teak, internals flush", "—"],
     ["Windows", "UPVC sliding with mosquito mesh & grill", "—"],
-    ["Flooring", "800×800 vitrified · anti-skid in wet areas", "—"],
+    ["Flooring", "900×900 vitrified · anti-skid in wet areas", "—"],
     ["Painting", "Interior emulsion · exterior weather coat", "2 coats + primer"],
     ["Testing", "Concrete cubes at 7 and 28 days, third party", "IS 516"],
   ],

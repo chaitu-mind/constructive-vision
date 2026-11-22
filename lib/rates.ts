@@ -85,12 +85,12 @@ export const packages: Package[] = [
   {
     id: "standard", name: "Standard", low: 2000, high: 2300,
     blurb: "What most owners choose. Better fittings and joinery on the same structural specification.",
-    marks: ["M20 concrete", "Fe 500D or FE 550D TMT", "Vitrified flooring 800×800", "Teak main door", "UPVC windows", "Branded CP fittings"],
+    marks: ["M20 concrete", "Fe 500D or FE 550D TMT", "Vitrified flooring 900×900", "Teak main door", "UPVC windows", "Branded CP fittings"],
     inclusions: [
       structure,
       masonry("Plastering curing for a minimum of 7 days"),
       { group: "Flooring & tiling", items: [
-        "Vitrified tiles 800×800 in living, dining and bedrooms",
+        "Vitrified tiles 900×900 in living, dining and bedrooms",
         "Anti-skid tiles in bathrooms and balcony, wall tiles to 7 ft in bathrooms and 4 ft above kitchen platform",
         "Granite kitchen platform with stainless steel sink",
         "Tile skirting throughout",
