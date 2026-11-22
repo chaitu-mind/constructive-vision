@@ -1,12 +1,15 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import CardSlides from "./CardSlides";
 import type { Work } from "@/lib/works";
 
 export default function WorkCard({ w, plate, as: As = "h3" }: { w: Work; plate?: ReactNode; as?: "h2" | "h3" }) {
   return (
     <Link className="work" href={`/works/${w.slug}/`}>
       <span className="work__plate">
-        {w.photo ? <img src={w.photo} alt={`${w.name}, ${w.location}`} loading="lazy" /> : plate}
+        {w.photo && w.gallery
+          ? <CardSlides delay={(Number(w.ref.replace(/\D/g, "")) % 3) * 700} slides={[{ src: w.photo, alt: `${w.name}, ${w.location}` }, ...w.gallery]} />
+          : w.photo ? <img src={w.photo} alt={`${w.name}, ${w.location}`} loading="lazy" /> : plate}
         <span className={`status ${w.status === "Ongoing" ? "status--ongoing" : "status--done"}`}>{w.status}</span>
         {w.sample && <span className="work__stamp">Sample</span>}
       </span>

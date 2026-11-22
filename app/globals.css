@@ -876,3 +876,28 @@ a.topbar__item:hover{ color:#fff; }
 @media (min-width:760px){ .incl{ grid-template-columns:repeat(2,1fr); } }
 .incl__g h4{ font-family:var(--display); font-size:1rem; margin:0 0 8px; }
 .incl__g .ticks{ font-size:var(--fs-sm); }
+
+/* project carousel */
+.wcar{ margin:0; border-radius:var(--radius); overflow:hidden; background:var(--dark); box-shadow:var(--shadow); }
+.wcar__stage{ position:relative; }
+.wcar__track{ display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; outline-offset:-3px; }
+.wcar__track::-webkit-scrollbar{ display:none; }
+.wcar__slide{ flex:0 0 100%; width:100%; aspect-ratio:4/3; object-fit:cover; scroll-snap-align:start; }
+.wcar__btn{ position:absolute; top:50%; transform:translateY(-50%); width:44px; height:44px; border-radius:50%; border:0; cursor:pointer;
+  background:rgba(11,28,38,.62); color:#fff; font-size:28px; line-height:1; display:grid; place-items:center; padding:0 0 3px; }
+.wcar__btn:hover{ background:rgba(11,28,38,.85); }
+.wcar__btn--prev{ left:12px; } .wcar__btn--next{ right:12px; }
+.wcar__count{ position:absolute; right:12px; bottom:12px; padding:4px 10px; border-radius:99px; background:rgba(11,28,38,.7); color:#fff; font-size:var(--fs-xs); font-weight:600; }
+.wcar__thumbs{ display:flex; gap:8px; padding:10px; overflow-x:auto; background:var(--dark); scrollbar-width:thin; }
+.wcar__thumbs button{ flex:0 0 84px; padding:0; border:2px solid transparent; border-radius:6px; overflow:hidden; cursor:pointer; opacity:.6; background:none; }
+.wcar__thumbs button.is-on{ border-color:#fff; opacity:1; }
+.wcar__thumbs img{ display:block; width:100%; aspect-ratio:4/3; object-fit:cover; }
+.wcar figcaption{ padding:12px 18px; background:var(--dark); color:#B6C8D3; font-size:var(--fs-xs); font-weight:600; border-top:1px solid rgba(255,255,255,.1); }
+
+/* work-card slideshow */
+.cslides{ position:absolute; inset:0; display:block; }
+.cslides img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .8s ease, transform .6s; }
+.cslides img.is-on{ opacity:1; }
+.cslides__dots{ position:absolute; left:0; right:0; bottom:10px; display:flex; justify-content:center; gap:6px; }
+.cslides__dots i{ width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,.55); }
+.cslides__dots i.is-on{ background:#fff; }

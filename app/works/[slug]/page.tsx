@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import PageHeader, { SectionHead } from "@/components/PageHeader";
+import WorkCarousel from "@/components/WorkCarousel";
 import Elevation from "@/components/drawings/Elevation";
 import { works, getWork } from "@/lib/works";
 import { site } from "@/lib/site";
@@ -69,19 +70,20 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
 
           <div className="wdetail">
             <div>
-              <figure className="wplate">
-                {w.photo
-                  ? <img src={w.photo.replace("-md.webp", ".webp")} alt={`${w.name}, ${w.location}`} />
-                  : <Elevation work={w} />}
-                <figcaption>
-                  {w.sample ? <>Illustrative photograph · sample entry</> : w.photo ? <>{w.name} · {w.location}</> : <>Front elevation generated from the project record · {w.config}</>}
-                </figcaption>
-              </figure>
-
-              {w.gallery && (
-                <div className="wgallery">
-                  {w.gallery.map((g) => <img key={g.src} src={g.src} alt={g.alt} loading="lazy" />)}
-                </div>
+              {w.photo && w.gallery ? (
+                <WorkCarousel
+                  slides={[{ src: w.photo.replace("-md.webp", ".webp"), alt: `${w.name}, ${w.location}` }, ...w.gallery]}
+                  caption={`${w.name} · ${w.location}`}
+                />
+              ) : (
+                <figure className="wplate">
+                  {w.photo
+                    ? <img src={w.photo.replace("-md.webp", ".webp")} alt={`${w.name}, ${w.location}`} style={w.photoPosition ? { objectPosition: w.photoPosition } : undefined} />
+                    : <Elevation work={w} />}
+                  <figcaption>
+                    {w.sample ? <>Illustrative photograph · sample entry</> : w.photo ? <>{w.name} · {w.location}</> : <>Front elevation generated from the project record · {w.config}</>}
+                  </figcaption>
+                </figure>
               )}
 
               <div className="prose" style={{ marginTop: 34 }}>
