@@ -47,7 +47,7 @@ export const works: Work[] = [
     bays: 4,
     status: "Ongoing",
     year: "2026",
-    area: "—",
+    area: "3,040 sq.ft",
     config: "Duplex",
     scope: "Turnkey — design to handover",
     duration: "In progress",
