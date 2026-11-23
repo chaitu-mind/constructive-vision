@@ -21,7 +21,7 @@ replaced before you show this to anyone.
 |------------|----------------------------|-------------------------------------|
 | `phone`    | `+91 90000 00000`          | the real number                     |
 | `whatsapp` | `919000000000`             | same number, digits only, 91 first  |
-| `email`    | `hello@constructivevisions.com` | the real address               |
+| `email`    | `helloconstructivevision@gmail.com` | the real address               |
 | `street`   | `Plot 00, Road No. 0…`     | the real office address             |
 | `gst`      | `GSTIN — to be issued`     | the GSTIN once registered           |
 | `geo`      | approximate co-ordinates   | the exact ones from Google Maps     |

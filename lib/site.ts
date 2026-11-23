@@ -18,7 +18,7 @@ export const site = {
      TODO replace the address and GST. */
   phone: "+91 99897 35889",
   whatsapp: "919989735889", // digits only, country code first
-  email: "hello@constructivevisions.com", // TODO depends on the confirmed domain
+  email: "helloconstructivevision@gmail.com", // TODO depends on the confirmed domain
   street: "Door No. 0-00, Main Road",
   gst: "GSTIN — to be issued",
 
