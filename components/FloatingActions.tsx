@@ -4,7 +4,7 @@ import { site, founders, telLink, waLink } from "@/lib/site";
 export default function FloatingActions() {
   return (
     <div className="fab">
-      {founders.slice(0, 2).map((f) => (
+      {founders.map((f) => (
         <a key={f.name} className="fab__btn fab__btn--call" href={telLink(f.phone)} aria-label={`Call ${f.name}`}>
           <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.2 1.6 6 4.9 4.7 6.4a8.6 8.6 0 0 0 4.9 4.9L11.1 10l3.3 1.8-.6 2.5c-.2.6-.7 1-1.4 1A12 12 0 0 1 .7 3.6c0-.7.4-1.2 1-1.4l2.5-.6Z" fill="currentColor" /></svg>
           <span>{f.name.split(" ")[0]}</span>

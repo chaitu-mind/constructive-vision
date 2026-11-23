@@ -60,6 +60,9 @@ export default function Header() {
           <a className="topbar__item topbar__phone topbar__second" href={telLink(founders[1].phone)}>
             {founders[1].phone}
           </a>
+          <a className="topbar__item topbar__phone topbar__second" href={telLink(founders[2].phone)}>
+            {founders[2].phone}
+          </a>
         </div>
       </div>
 
