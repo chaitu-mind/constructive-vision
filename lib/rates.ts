@@ -40,7 +40,7 @@ const masonry = (extra: string) => ({
 
 export const packages: Package[] = [
   {
-    id: "essential", name: "Essential", low: 1750, high: 1950,
+    id: "essential", name: "Essential", low: 1900, high: 2050,
     blurb: "A sound structure with honest, hard-wearing finishes. Nothing cut from what holds the building up.",
     marks: ["M20 concrete", "Fe 500D or FE 550D TMT", "Vitrified flooring 600×600", "Flush internal doors", "Modular switches"],
     inclusions: [
@@ -83,7 +83,7 @@ export const packages: Package[] = [
     ],
   },
   {
-    id: "standard", name: "Standard", low: 2000, high: 2300,
+    id: "standard", name: "Standard", low: 2100, high: 2350,
     blurb: "What most owners choose. Better fittings and joinery on the same structural specification.",
     marks: ["M20 concrete", "Fe 500D or FE 550D TMT", "Vitrified flooring 900×900", "Teak main door", "UPVC windows", "Branded CP fittings"],
     inclusions: [
